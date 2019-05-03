@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - plane1
+  - plane2
+  - plane0
+  - plane3
+  - plane4
+  - plane5
   layers:
   - Default
   - TransparentFX

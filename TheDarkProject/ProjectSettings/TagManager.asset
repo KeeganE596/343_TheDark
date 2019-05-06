@@ -10,6 +10,9 @@ TagManager:
   - plane3
   - plane4
   - plane5
+  - Artifact
+  - DreamObject
+  - Pedestal
   layers:
   - Default
   - TransparentFX

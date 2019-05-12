@@ -41,7 +41,7 @@ public class playerArtifactState : MonoBehaviour
 
     		//testVignette.intensity.value = Mathf.Lerp(0.3f, 0.45f, sinWave);
     		testCA.intensity.value = Mathf.Lerp(0.3f, 1.0f, sinWave);
-    		testCG.hueShift.value = Mathf.Lerp(-150f, 150f, sinWave);
+    		testCG.hueShift.value = Mathf.Lerp(-50f, 50f, sinWave);
     		testLD.intensity.value = Mathf.Lerp(-30f, 30f, sinWave);
     		testLD.centerX.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Sin(Time.realtimeSinceStartup*2.2f)));
     		testLD.centerY.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Cos(Time.realtimeSinceStartup*3f)));
@@ -78,7 +78,7 @@ public class playerArtifactState : MonoBehaviour
 		testCG = ScriptableObject.CreateInstance<ColorGrading>();
 		testCG.enabled.Override(true);
         testCG.hueShift.Override(1f);
-        //testCG.saturation.Override(-25f);
+        testCG.saturation.Override(-30f);
 		testLD = ScriptableObject.CreateInstance<LensDistortion>();
 		testLD.enabled.Override(true);
         testLD.intensity.Override(1f);

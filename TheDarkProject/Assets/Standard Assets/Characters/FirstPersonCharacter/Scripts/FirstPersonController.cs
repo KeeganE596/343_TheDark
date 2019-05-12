@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        private double playerStamina;
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +57,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+			playerStamina = 10;
         }
 
 
@@ -63,10 +67,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+            /*if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+            }*/
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
@@ -113,13 +117,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
+                /*if (m_Jump)
                 {
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
-                }
+                }*/
             }
             else
             {
@@ -212,8 +216,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            if(playerStamina <= 5) {
+            	m_IsWalking = true;
+            }
+            else{
+            	m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            }
 #endif
+            if(!m_IsWalking) {
+            	playerStamina -= 0.05;
+            }
+            else if(playerStamina < 10 && m_IsWalking) {
+            	playerStamina += 0.05;
+            }
+            Debug.Log(playerStamina + ", " + m_IsWalking);
+
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);

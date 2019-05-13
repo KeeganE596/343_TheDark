@@ -17,7 +17,7 @@ public class ShadowDrift : MonoBehaviour
     }
 
     public void Move() {
-    	Debug.Log("moving");
+//    	Debug.Log("moving");
     	transform.LookAt(GameObject.FindWithTag("Player").transform.position);
     	transform.Translate(Vector3.forward * Time.deltaTime*3); 
     }

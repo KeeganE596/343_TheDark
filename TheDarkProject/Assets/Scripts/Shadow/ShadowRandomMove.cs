@@ -58,6 +58,7 @@ public class ShadowRandomMove : MonoBehaviour
     }
 
     public GameObject currentArea(int i) {
+        Start();
     	return planes[i];
     }
 }

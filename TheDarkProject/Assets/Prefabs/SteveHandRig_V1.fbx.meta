@@ -1,0 +1,1544 @@
+fileFormatVersion: 2
+guid: da65a08622acbaf4e89fb0bd801c9ba1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cameras
+    100002: FPV
+    100004: Geom
+    100006: IK
+    100008: ShadowSteve
+    100010: Steve_Ctrl_ChestEndEffector
+    100012: Steve_Ctrl_ChestOriginEffector
+    100014: Steve_Ctrl_Head
+    100016: Steve_Ctrl_HeadEffector
+    100018: Steve_Ctrl_Hips
+    100020: Steve_Ctrl_HipsEffector
+    100022: Steve_Ctrl_LeftAnkleEffector
+    100024: Steve_Ctrl_LeftArm
+    100026: Steve_Ctrl_LeftElbowEffector
+    100028: Steve_Ctrl_LeftFoot
+    100030: Steve_Ctrl_LeftForeArm
+    100032: Steve_Ctrl_LeftHand
+    100034: Steve_Ctrl_LeftHandIndex1
+    100036: Steve_Ctrl_LeftHandIndex2
+    100038: Steve_Ctrl_LeftHandIndex3
+    100040: Steve_Ctrl_LeftHandIndex4
+    100042: Steve_Ctrl_LeftHandIndexEffector
+    100044: Steve_Ctrl_LeftHandMiddle1
+    100046: Steve_Ctrl_LeftHandMiddle2
+    100048: Steve_Ctrl_LeftHandMiddle3
+    100050: Steve_Ctrl_LeftHandMiddle4
+    100052: Steve_Ctrl_LeftHandMiddleEffector
+    100054: Steve_Ctrl_LeftHandPinky1
+    100056: Steve_Ctrl_LeftHandPinky2
+    100058: Steve_Ctrl_LeftHandPinky3
+    100060: Steve_Ctrl_LeftHandPinky4
+    100062: Steve_Ctrl_LeftHandPinkyEffector
+    100064: Steve_Ctrl_LeftHandRing1
+    100066: Steve_Ctrl_LeftHandRing2
+    100068: Steve_Ctrl_LeftHandRing3
+    100070: Steve_Ctrl_LeftHandRing4
+    100072: Steve_Ctrl_LeftHandRingEffector
+    100074: Steve_Ctrl_LeftHandThumb1
+    100076: Steve_Ctrl_LeftHandThumb2
+    100078: Steve_Ctrl_LeftHandThumb3
+    100080: Steve_Ctrl_LeftHandThumb4
+    100082: Steve_Ctrl_LeftHandThumbEffector
+    100084: Steve_Ctrl_LeftHipEffector
+    100086: Steve_Ctrl_LeftKneeEffector
+    100088: Steve_Ctrl_LeftLeg
+    100090: Steve_Ctrl_LeftShoulder
+    100092: Steve_Ctrl_LeftShoulderEffector
+    100094: Steve_Ctrl_LeftUpLeg
+    100096: Steve_Ctrl_LeftWristEffector
+    100098: Steve_Ctrl_Neck
+    100100: Steve_Ctrl_Reference
+    100102: Steve_Ctrl_RightAnkleEffector
+    100104: Steve_Ctrl_RightArm
+    100106: Steve_Ctrl_RightElbowEffector
+    100108: Steve_Ctrl_RightFoot
+    100110: Steve_Ctrl_RightForeArm
+    100112: Steve_Ctrl_RightHand
+    100114: Steve_Ctrl_RightHandIndex1
+    100116: Steve_Ctrl_RightHandIndex2
+    100118: Steve_Ctrl_RightHandIndex3
+    100120: Steve_Ctrl_RightHandIndex4
+    100122: Steve_Ctrl_RightHandIndexEffector
+    100124: Steve_Ctrl_RightHandMiddle1
+    100126: Steve_Ctrl_RightHandMiddle2
+    100128: Steve_Ctrl_RightHandMiddle3
+    100130: Steve_Ctrl_RightHandMiddle4
+    100132: Steve_Ctrl_RightHandMiddleEffector
+    100134: Steve_Ctrl_RightHandPinky1
+    100136: Steve_Ctrl_RightHandPinky2
+    100138: Steve_Ctrl_RightHandPinky3
+    100140: Steve_Ctrl_RightHandPinky4
+    100142: Steve_Ctrl_RightHandPinkyEffector
+    100144: Steve_Ctrl_RightHandRing1
+    100146: Steve_Ctrl_RightHandRing2
+    100148: Steve_Ctrl_RightHandRing3
+    100150: Steve_Ctrl_RightHandRing4
+    100152: Steve_Ctrl_RightHandRingEffector
+    100154: Steve_Ctrl_RightHandThumb1
+    100156: Steve_Ctrl_RightHandThumb2
+    100158: Steve_Ctrl_RightHandThumb3
+    100160: Steve_Ctrl_RightHandThumb4
+    100162: Steve_Ctrl_RightHandThumbEffector
+    100164: Steve_Ctrl_RightHipEffector
+    100166: Steve_Ctrl_RightKneeEffector
+    100168: Steve_Ctrl_RightLeg
+    100170: Steve_Ctrl_RightShoulder
+    100172: Steve_Ctrl_RightShoulderEffector
+    100174: Steve_Ctrl_RightUpLeg
+    100176: Steve_Ctrl_RightWristEffector
+    100178: Steve_Ctrl_Spine
+    100180: Steve_Head
+    100182: Steve_Hips
+    100184: Steve_LeftArm
+    100186: Steve_LeftFoot
+    100188: Steve_LeftForeArm
+    100190: Steve_LeftHand
+    100192: Steve_LeftHandIndex1
+    100194: Steve_LeftHandIndex2
+    100196: Steve_LeftHandIndex3
+    100198: Steve_LeftHandIndex4
+    100200: Steve_LeftHandMiddle1
+    100202: Steve_LeftHandMiddle2
+    100204: Steve_LeftHandMiddle3
+    100206: Steve_LeftHandMiddle4
+    100208: Steve_LeftHandPinky1
+    100210: Steve_LeftHandPinky2
+    100212: Steve_LeftHandPinky3
+    100214: Steve_LeftHandPinky4
+    100216: Steve_LeftHandRing1
+    100218: Steve_LeftHandRing2
+    100220: Steve_LeftHandRing3
+    100222: Steve_LeftHandRing4
+    100224: Steve_LeftHandThumb1
+    100226: Steve_LeftHandThumb2
+    100228: Steve_LeftHandThumb3
+    100230: Steve_LeftHandThumb4
+    100232: Steve_LeftLeg
+    100234: Steve_LeftShoulder
+    100236: Steve_LeftUpLeg
+    100238: Steve_Neck
+    100240: Steve_Reference
+    100242: Steve_RightArm
+    100244: Steve_RightFoot
+    100246: Steve_RightForeArm
+    100248: Steve_RightHand
+    100250: Steve_RightHandIndex1
+    100252: Steve_RightHandIndex2
+    100254: Steve_RightHandIndex3
+    100256: Steve_RightHandIndex4
+    100258: Steve_RightHandMiddle1
+    100260: Steve_RightHandMiddle2
+    100262: Steve_RightHandMiddle3
+    100264: Steve_RightHandMiddle4
+    100266: Steve_RightHandPinky1
+    100268: Steve_RightHandPinky2
+    100270: Steve_RightHandPinky3
+    100272: Steve_RightHandPinky4
+    100274: Steve_RightHandRing1
+    100276: Steve_RightHandRing2
+    100278: Steve_RightHandRing3
+    100280: Steve_RightHandRing4
+    100282: Steve_RightHandThumb1
+    100284: Steve_RightHandThumb2
+    100286: Steve_RightHandThumb3
+    100288: Steve_RightHandThumb4
+    100290: Steve_RightLeg
+    100292: Steve_RightShoulder
+    100294: Steve_RightUpLeg
+    100296: Steve_Spine
+    100298: //RootNode
+    400000: Cameras
+    400002: FPV
+    400004: Geom
+    400006: IK
+    400008: ShadowSteve
+    400010: Steve_Ctrl_ChestEndEffector
+    400012: Steve_Ctrl_ChestOriginEffector
+    400014: Steve_Ctrl_Head
+    400016: Steve_Ctrl_HeadEffector
+    400018: Steve_Ctrl_Hips
+    400020: Steve_Ctrl_HipsEffector
+    400022: Steve_Ctrl_LeftAnkleEffector
+    400024: Steve_Ctrl_LeftArm
+    400026: Steve_Ctrl_LeftElbowEffector
+    400028: Steve_Ctrl_LeftFoot
+    400030: Steve_Ctrl_LeftForeArm
+    400032: Steve_Ctrl_LeftHand
+    400034: Steve_Ctrl_LeftHandIndex1
+    400036: Steve_Ctrl_LeftHandIndex2
+    400038: Steve_Ctrl_LeftHandIndex3
+    400040: Steve_Ctrl_LeftHandIndex4
+    400042: Steve_Ctrl_LeftHandIndexEffector
+    400044: Steve_Ctrl_LeftHandMiddle1
+    400046: Steve_Ctrl_LeftHandMiddle2
+    400048: Steve_Ctrl_LeftHandMiddle3
+    400050: Steve_Ctrl_LeftHandMiddle4
+    400052: Steve_Ctrl_LeftHandMiddleEffector
+    400054: Steve_Ctrl_LeftHandPinky1
+    400056: Steve_Ctrl_LeftHandPinky2
+    400058: Steve_Ctrl_LeftHandPinky3
+    400060: Steve_Ctrl_LeftHandPinky4
+    400062: Steve_Ctrl_LeftHandPinkyEffector
+    400064: Steve_Ctrl_LeftHandRing1
+    400066: Steve_Ctrl_LeftHandRing2
+    400068: Steve_Ctrl_LeftHandRing3
+    400070: Steve_Ctrl_LeftHandRing4
+    400072: Steve_Ctrl_LeftHandRingEffector
+    400074: Steve_Ctrl_LeftHandThumb1
+    400076: Steve_Ctrl_LeftHandThumb2
+    400078: Steve_Ctrl_LeftHandThumb3
+    400080: Steve_Ctrl_LeftHandThumb4
+    400082: Steve_Ctrl_LeftHandThumbEffector
+    400084: Steve_Ctrl_LeftHipEffector
+    400086: Steve_Ctrl_LeftKneeEffector
+    400088: Steve_Ctrl_LeftLeg
+    400090: Steve_Ctrl_LeftShoulder
+    400092: Steve_Ctrl_LeftShoulderEffector
+    400094: Steve_Ctrl_LeftUpLeg
+    400096: Steve_Ctrl_LeftWristEffector
+    400098: Steve_Ctrl_Neck
+    400100: Steve_Ctrl_Reference
+    400102: Steve_Ctrl_RightAnkleEffector
+    400104: Steve_Ctrl_RightArm
+    400106: Steve_Ctrl_RightElbowEffector
+    400108: Steve_Ctrl_RightFoot
+    400110: Steve_Ctrl_RightForeArm
+    400112: Steve_Ctrl_RightHand
+    400114: Steve_Ctrl_RightHandIndex1
+    400116: Steve_Ctrl_RightHandIndex2
+    400118: Steve_Ctrl_RightHandIndex3
+    400120: Steve_Ctrl_RightHandIndex4
+    400122: Steve_Ctrl_RightHandIndexEffector
+    400124: Steve_Ctrl_RightHandMiddle1
+    400126: Steve_Ctrl_RightHandMiddle2
+    400128: Steve_Ctrl_RightHandMiddle3
+    400130: Steve_Ctrl_RightHandMiddle4
+    400132: Steve_Ctrl_RightHandMiddleEffector
+    400134: Steve_Ctrl_RightHandPinky1
+    400136: Steve_Ctrl_RightHandPinky2
+    400138: Steve_Ctrl_RightHandPinky3
+    400140: Steve_Ctrl_RightHandPinky4
+    400142: Steve_Ctrl_RightHandPinkyEffector
+    400144: Steve_Ctrl_RightHandRing1
+    400146: Steve_Ctrl_RightHandRing2
+    400148: Steve_Ctrl_RightHandRing3
+    400150: Steve_Ctrl_RightHandRing4
+    400152: Steve_Ctrl_RightHandRingEffector
+    400154: Steve_Ctrl_RightHandThumb1
+    400156: Steve_Ctrl_RightHandThumb2
+    400158: Steve_Ctrl_RightHandThumb3
+    400160: Steve_Ctrl_RightHandThumb4
+    400162: Steve_Ctrl_RightHandThumbEffector
+    400164: Steve_Ctrl_RightHipEffector
+    400166: Steve_Ctrl_RightKneeEffector
+    400168: Steve_Ctrl_RightLeg
+    400170: Steve_Ctrl_RightShoulder
+    400172: Steve_Ctrl_RightShoulderEffector
+    400174: Steve_Ctrl_RightUpLeg
+    400176: Steve_Ctrl_RightWristEffector
+    400178: Steve_Ctrl_Spine
+    400180: Steve_Head
+    400182: Steve_Hips
+    400184: Steve_LeftArm
+    400186: Steve_LeftFoot
+    400188: Steve_LeftForeArm
+    400190: Steve_LeftHand
+    400192: Steve_LeftHandIndex1
+    400194: Steve_LeftHandIndex2
+    400196: Steve_LeftHandIndex3
+    400198: Steve_LeftHandIndex4
+    400200: Steve_LeftHandMiddle1
+    400202: Steve_LeftHandMiddle2
+    400204: Steve_LeftHandMiddle3
+    400206: Steve_LeftHandMiddle4
+    400208: Steve_LeftHandPinky1
+    400210: Steve_LeftHandPinky2
+    400212: Steve_LeftHandPinky3
+    400214: Steve_LeftHandPinky4
+    400216: Steve_LeftHandRing1
+    400218: Steve_LeftHandRing2
+    400220: Steve_LeftHandRing3
+    400222: Steve_LeftHandRing4
+    400224: Steve_LeftHandThumb1
+    400226: Steve_LeftHandThumb2
+    400228: Steve_LeftHandThumb3
+    400230: Steve_LeftHandThumb4
+    400232: Steve_LeftLeg
+    400234: Steve_LeftShoulder
+    400236: Steve_LeftUpLeg
+    400238: Steve_Neck
+    400240: Steve_Reference
+    400242: Steve_RightArm
+    400244: Steve_RightFoot
+    400246: Steve_RightForeArm
+    400248: Steve_RightHand
+    400250: Steve_RightHandIndex1
+    400252: Steve_RightHandIndex2
+    400254: Steve_RightHandIndex3
+    400256: Steve_RightHandIndex4
+    400258: Steve_RightHandMiddle1
+    400260: Steve_RightHandMiddle2
+    400262: Steve_RightHandMiddle3
+    400264: Steve_RightHandMiddle4
+    400266: Steve_RightHandPinky1
+    400268: Steve_RightHandPinky2
+    400270: Steve_RightHandPinky3
+    400272: Steve_RightHandPinky4
+    400274: Steve_RightHandRing1
+    400276: Steve_RightHandRing2
+    400278: Steve_RightHandRing3
+    400280: Steve_RightHandRing4
+    400282: Steve_RightHandThumb1
+    400284: Steve_RightHandThumb2
+    400286: Steve_RightHandThumb3
+    400288: Steve_RightHandThumb4
+    400290: Steve_RightLeg
+    400292: Steve_RightShoulder
+    400294: Steve_RightUpLeg
+    400296: Steve_Spine
+    400298: //RootNode
+    2000000: FPV
+    2100000: ai_SteveSkin
+    4300000: ShadowSteve
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: ShadowSteve
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Head' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: IK
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftArm
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightArm
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftForeArm
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightForeArm
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHand
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHand
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_Hips
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_Spine
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandIndex2
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandIndex2
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Steve_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SteveHandRig_V1(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Geom
+      parentName: SteveHandRig_V1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ShadowSteve
+      parentName: Geom
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: IK
+      parentName: SteveHandRig_V1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Reference
+      parentName: IK
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Hips
+      parentName: Steve_Reference
+      position: {x: -0.00000011174907, y: 0.3760364, z: 1.0251962e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftUpLeg
+      parentName: Steve_Hips
+      position: {x: -0.0599094, y: -0.04650726, z: 0}
+      rotation: {x: -0.000042079097, y: 0.0000021418116, z: 0.0000011643788, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftLeg
+      parentName: Steve_LeftUpLeg
+      position: {x: -0.0048478725, y: -0.17514475, z: 0.00000004496882}
+      rotation: {x: 0.00009023211, y: -0.0000019732474, z: -0.0000019295242, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftFoot
+      parentName: Steve_LeftLeg
+      position: {x: -0.0000000034169558, y: -0.14108087, z: -0.0000000081107885}
+      rotation: {x: -0.00004815301, y: -3.6849745e-11, z: 0.0000007652636, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightUpLeg
+      parentName: Steve_Hips
+      position: {x: 0.059909455, y: -0.046507187, z: 0}
+      rotation: {x: -0.0004791414, y: -0.0000057788284, z: -0.0000000027688762, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightLeg
+      parentName: Steve_RightUpLeg
+      position: {x: 0.004848034, y: -0.17514476, z: -0.00000015308456}
+      rotation: {x: 0.0010296736, y: 0.000002186703, z: -0.0000011517461, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightFoot
+      parentName: Steve_RightLeg
+      position: {x: -4.3079018e-10, y: -0.14108089, z: -0.000000006984404}
+      rotation: {x: -0.00055053236, y: 0.0000035926785, z: 0.0000011496124, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Spine
+      parentName: Steve_Hips
+      position: {x: -0.000000037058133, y: 0.056163367, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Neck
+      parentName: Steve_Spine
+      position: {x: 0.00000008934861, y: 0.13839367, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Head
+      parentName: Steve_Neck
+      position: {x: 0.00000003862252, y: 0.05982311, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FPV
+      parentName: Steve_Head
+      position: {x: -0.0021119572, y: 0.0003083152, z: 0.017084815}
+      rotation: {x: 0, y: 0.017452361, z: 1.2244604e-16, w: 0.9998477}
+      scale: {x: 6.8638506, y: 6.8638506, z: 6.8638506}
+    - name: Steve_LeftShoulder
+      parentName: Steve_Spine
+      position: {x: -0.042504944, y: 0.15070438, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftArm
+      parentName: Steve_LeftShoulder
+      position: {x: -0.024412865, y: -0.021314774, z: -2.0679515e-27}
+      rotation: {x: 0.0000013969799, y: -0.00000056066557, z: 0.000007822275, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftForeArm
+      parentName: Steve_LeftArm
+      position: {x: -0.041442897, y: -0.10111118, z: -0.011920245}
+      rotation: {x: -0.00000085312456, y: 0.0000005871499, z: -0.0000722187, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHand
+      parentName: Steve_LeftForeArm
+      position: {x: -0.035634078, y: -0.09332493, z: 0.043193243}
+      rotation: {x: -0.0000005215804, y: -1.8407095e-10, z: 0.00035291002, w: 0.99999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandThumb1
+      parentName: Steve_LeftHand
+      position: {x: 0.0044359732, y: -0.010007634, z: 0.012417446}
+      rotation: {x: 0, y: -0, z: -0.0010587298, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandThumb2
+      parentName: Steve_LeftHandThumb1
+      position: {x: 0.0030963325, y: -0.012175611, z: 0.012487217}
+      rotation: {x: 0, y: 0, z: 0.0021174587, w: 0.9999978}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandThumb3
+      parentName: Steve_LeftHandThumb2
+      position: {x: 0.001027501, y: -0.010204259, z: 0.0043658977}
+      rotation: {x: 0, y: -0, z: -0.0029670391, w: 0.9999956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandThumb4
+      parentName: Steve_LeftHandThumb3
+      position: {x: 0.00015163784, y: -0.011552419, z: 0.0024405771}
+      rotation: {x: 0, y: 0, z: 0.0029930323, w: 0.9999955}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandIndex1
+      parentName: Steve_LeftHand
+      position: {x: -0.012613784, y: -0.030257503, z: 0.02713911}
+      rotation: {x: 0, y: -0, z: -0.0010587298, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandIndex2
+      parentName: Steve_LeftHandIndex1
+      position: {x: -0.0011469875, y: -0.016658625, z: 0.0051716906}
+      rotation: {x: 0.00003700034, y: -0.017452369, z: 0.0021145244, w: 0.9998455}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandIndex3
+      parentName: Steve_LeftHandIndex2
+      position: {x: 0.003569696, y: -0.009484718, z: 0.0013010084}
+      rotation: {x: 0.00030919, y: 0.1736476, z: -0.0029196441, w: 0.9848035}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandIndex4
+      parentName: Steve_LeftHandIndex3
+      position: {x: 0.0034420087, y: -0.00772845, z: 0.0031268774}
+      rotation: {x: 0.000979138, y: -0.70710474, z: 0.0025988787, w: 0.70710343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandMiddle1
+      parentName: Steve_LeftHand
+      position: {x: -0.012785069, y: -0.032828663, z: 0.01737689}
+      rotation: {x: 0, y: -0, z: -0.0010587298, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandMiddle2
+      parentName: Steve_LeftHandMiddle1
+      position: {x: 0.0012786022, y: -0.018913476, z: 0.0040298183}
+      rotation: {x: 0.000000065844404, y: -0.00003109589, z: 0.0021174587, w: 0.9999978}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandMiddle3
+      parentName: Steve_LeftHandMiddle2
+      position: {x: 0.007135672, y: -0.008090659, z: 0.0024018625}
+      rotation: {x: 0.00000056426626, y: 0.0003109585, z: -0.00296444, w: 0.9999956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandMiddle4
+      parentName: Steve_LeftHandMiddle3
+      position: {x: 0.006670369, y: -0.006353826, z: 0.0019730125}
+      rotation: {x: 0.0000017626337, y: -0.0013993134, z: 0.002964439, w: 0.99999464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandRing1
+      parentName: Steve_LeftHand
+      position: {x: -0.011695397, y: -0.03512044, z: 0.0057404577}
+      rotation: {x: 0, y: -0, z: -0.0010587298, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandRing2
+      parentName: Steve_LeftHandRing1
+      position: {x: 0.0016118422, y: -0.015692364, z: 0.0031988914}
+      rotation: {x: 0.000000065848006, y: -0.000031097592, z: 0.0021174587, w: 0.9999978}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandRing3
+      parentName: Steve_LeftHandRing2
+      position: {x: 0.0069307475, y: -0.007359208, z: 0.002481712}
+      rotation: {x: 0.0000005642971, y: 0.00031097553, z: -0.00296444, w: 0.9999956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandRing4
+      parentName: Steve_LeftHandRing3
+      position: {x: 0.0058837747, y: -0.00541257, z: 0.0023422264}
+      rotation: {x: 0.0000017627301, y: -0.00139939, z: 0.002964439, w: 0.99999464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandPinky1
+      parentName: Steve_LeftHand
+      position: {x: -0.008877014, y: -0.03669456, z: -0.002927786}
+      rotation: {x: 0, y: -0, z: -0.0010587298, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandPinky2
+      parentName: Steve_LeftHandPinky1
+      position: {x: 0.001285789, y: -0.011425989, z: 0.0015747958}
+      rotation: {x: 0, y: 0, z: 0.0021241172, w: 0.99999774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandPinky3
+      parentName: Steve_LeftHandPinky2
+      position: {x: 0.0050966726, y: -0.00572696, z: 0.0019837243}
+      rotation: {x: 0, y: -0, z: -0.003031026, w: 0.9999954}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_LeftHandPinky4
+      parentName: Steve_LeftHandPinky3
+      position: {x: 0.0050954777, y: -0.00395363, z: 0.0018793254}
+      rotation: {x: 0, y: 0, z: 0.003264078, w: 0.9999947}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightShoulder
+      parentName: Steve_Spine
+      position: {x: 0.042505134, y: 0.15070431, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightArm
+      parentName: Steve_RightShoulder
+      position: {x: 0.024412837, y: -0.021314774, z: 0}
+      rotation: {x: -0.5529783, y: -0.17510991, z: 0.19049719, w: 0.79199904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightForeArm
+      parentName: Steve_RightArm
+      position: {x: 0.041445773, y: -0.10110998, z: -0.011920512}
+      rotation: {x: -0.19260824, y: -0.28121302, z: 0.0812343, w: 0.93660146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHand
+      parentName: Steve_RightForeArm
+      position: {x: 0.035608273, y: -0.09333475, z: 0.043193255}
+      rotation: {x: -0.008530607, y: 0.022281663, z: -0.01142528, w: 0.99965006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandThumb1
+      parentName: Steve_RightHand
+      position: {x: -0.0044235433, y: -0.010013145, z: 0.012417436}
+      rotation: {x: 0.031870116, y: -0.054149628, z: -0.069913566, w: 0.9955723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandThumb2
+      parentName: Steve_RightHandThumb1
+      position: {x: -0.0031366758, y: -0.012165278, z: 0.012487216}
+      rotation: {x: -0.028438108, y: 0.05307475, z: 0.11066731, w: 0.9920318}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandThumb3
+      parentName: Steve_RightHandThumb2
+      position: {x: -0.0009682603, y: -0.010210059, z: 0.00436591}
+      rotation: {x: 0.33109412, y: 0.018014025, z: 0.056148082, w: 0.9417535}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandThumb4
+      parentName: Steve_RightHandThumb3
+      position: {x: -0.00023188948, y: -0.0115510775, z: 0.002440572}
+      rotation: {x: 0, y: -0, z: -0.009292447, w: 0.99995685}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandIndex1
+      parentName: Steve_RightHand
+      position: {x: 0.012651376, y: -0.030241838, z: 0.027139097}
+      rotation: {x: -0.0028120968, y: -0.3120279, z: -0.47424728, w: 0.82323766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandIndex2
+      parentName: Steve_RightHandIndex1
+      position: {x: 0.001091739, y: -0.01666233, z: 0.0051716915}
+      rotation: {x: -0.037880424, y: -0.08911934, z: -0.5723954, w: 0.81423974}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandIndex3
+      parentName: Steve_RightHandIndex2
+      position: {x: -0.0034151282, y: -0.0095049795, z: 0.0015449196}
+      rotation: {x: 0.06401728, y: 0.012405406, z: -0.45827597, w: 0.8864147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandIndex4
+      parentName: Steve_RightHandIndex3
+      position: {x: -0.0046759117, y: -0.0076970086, z: 0.0004960846}
+      rotation: {x: -0.0030809646, y: -0.7071034, z: -0.008528331, w: 0.7070521}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandMiddle1
+      parentName: Steve_RightHand
+      position: {x: 0.012825863, y: -0.03281277, z: 0.017376887}
+      rotation: {x: -0.03979674, y: -0.21047333, z: -0.43097138, w: 0.8765734}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandMiddle2
+      parentName: Steve_RightHandMiddle1
+      position: {x: -0.0013412989, y: -0.018909113, z: 0.0040298174}
+      rotation: {x: -0.092526585, y: -0.10776712, z: -0.5645456, w: 0.8130888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandMiddle3
+      parentName: Steve_RightHandMiddle2
+      position: {x: -0.007000298, y: -0.008131915, z: 0.0026482355}
+      rotation: {x: 0.01467978, y: 0.046888854, z: -0.51664525, w: 0.85478866}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandMiddle4
+      parentName: Steve_RightHandMiddle3
+      position: {x: -0.0069964826, y: -0.006306131, z: -0.00019841868}
+      rotation: {x: -0.003081479, y: -0.7071033, z: -0.008527815, w: 0.7070521}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandRing1
+      parentName: Steve_RightHand
+      position: {x: 0.011739045, y: -0.0351059, z: 0.005740455}
+      rotation: {x: -0.03787001, y: -0.1403326, z: -0.45327705, w: 0.8794388}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandRing2
+      parentName: Steve_RightHandRing1
+      position: {x: -0.001663859, y: -0.015686912, z: 0.0031989068}
+      rotation: {x: -0.093241416, y: -0.104354754, z: -0.5051328, w: 0.8516202}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandRing3
+      parentName: Steve_RightHandRing2
+      position: {x: -0.0067969495, y: -0.0073993066, z: 0.002721022}
+      rotation: {x: -0.029318074, y: 0.035710007, z: -0.5179195, w: 0.85418075}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandRing4
+      parentName: Steve_RightHandRing3
+      position: {x: -0.0063564614, y: -0.0053700954, z: 0.00039758085}
+      rotation: {x: -0.003081479, y: -0.7071033, z: -0.008527815, w: 0.7070521}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandPinky1
+      parentName: Steve_RightHand
+      position: {x: 0.00892264, y: -0.036683522, z: -0.0029277871}
+      rotation: {x: -0.05586246, y: -0.054319844, z: -0.55147463, w: 0.83054477}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandPinky2
+      parentName: Steve_RightHandPinky1
+      position: {x: -0.0013236549, y: -0.011421649, z: 0.001574789}
+      rotation: {x: -0.068871155, y: -0.08616856, z: -0.36765972, w: 0.92339486}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandPinky3
+      parentName: Steve_RightHandPinky2
+      position: {x: -0.0049912375, y: -0.0057562846, z: 0.0021592276}
+      rotation: {x: -0.04431712, y: 0.09971988, z: -0.39632916, w: 0.9116003}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_RightHandPinky4
+      parentName: Steve_RightHandPinky3
+      position: {x: -0.0054524015, y: -0.003918623, z: 0.00020699848}
+      rotation: {x: -0.00308914, y: -0.70710444, z: -0.008089046, w: 0.7070561}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_Reference
+      parentName: IK
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_HipsEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.00000008106232, y: 0.3295292, z: 1.0251962e-11}
+      rotation: {x: 3.061617e-17, y: 1.7629041e-25, z: 0.0000000057580816, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftAnkleEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.06475719, y: 0.013303508, z: 0.0000012105634}
+      rotation: {x: 3.469142e-32, y: -0, z: -1.2246467e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightAnkleEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.06475706, y: 0.013303728, z: 0.000012395047}
+      rotation: {x: 3.469142e-32, y: -0, z: -1.2246467e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftWristEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.14400536, y: 0.3671572, z: 0.03127257}
+      rotation: {x: 3.9005843e-10, y: -1.318772e-18, z: -0.0000000033809575, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightWristEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.0912054, y: 0.5973764, z: 0.18255264}
+      rotation: {x: -0.63990676, y: -0.3753916, z: 0.34112257, w: 0.5772659}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftKneeEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.06475698, y: 0.15438437, z: 0.000015005891}
+      rotation: {x: 0.000048951508, y: 0.0000000028236395, z: -0.0000007805172, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightKneeEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.06475738, y: 0.15438454, z: 0.00016794287}
+      rotation: {x: 0.000551208, y: -0.0000035811743, z: -0.0000011496151, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftElbowEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.108359255, y: 0.46047756, z: -0.011920578}
+      rotation: {x: 0.00000028541893, y: -0.00000026866485, z: -0.0000003411671, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightElbowEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.11955982, y: 0.5405403, z: 0.09417464}
+      rotation: {x: -0.631044, y: -0.37862676, z: 0.36441892, w: 0.57063484}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_ChestOriginEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.0000001488072, y: 0.43219978, z: 1.0251962e-11}
+      rotation: {x: 3.0616168e-17, y: -1.7249235e-25, z: -0.000000005634028, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_ChestEndEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.000000052452087, y: 0.5829041, z: 1.0251962e-11}
+      rotation: {x: 3.0616168e-17, y: -1.7249235e-25, z: -0.000000005634028, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftShoulderEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.066917956, y: 0.56158936, z: 1.0251962e-11}
+      rotation: {x: 0.0000013364574, y: -0.00000070833244, z: 0.0000013883185, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightShoulderEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.06691782, y: 0.5615893, z: 1.0251962e-11}
+      rotation: {x: -0.55298084, y: -0.1750978, z: 0.1905136, w: 0.79199594}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_HeadEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.000000020836069, y: 0.6304166, z: 1.0251962e-11}
+      rotation: {x: 3.0616168e-17, y: -1.7249235e-25, z: -0.000000005634028, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHipEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.059909508, y: 0.32952914, z: 1.0251962e-11}
+      rotation: {x: -0.000041437866, y: 0.0000021237202, z: 0.0000010749718, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHipEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.059909347, y: 0.32952923, z: 1.0251962e-11}
+      rotation: {x: -0.00047805486, y: -0.000005713311, z: 0.00000053852995, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandThumbEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.13531683, y: 0.32321742, z: 0.06298371}
+      rotation: {x: 3.9005835e-10, y: 1.6028464e-17, z: -0.0000000033809577, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandIndexEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.15001151, y: 0.30301884, z: 0.066919915}
+      rotation: {x: 3.9005849e-10, y: -1.3315775e-16, z: -0.0000000033809575, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandMiddleEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.14171384, y: 0.30095893, z: 0.057050865}
+      rotation: {x: 3.9005835e-10, y: -1.4009666e-16, z: -0.0000000033809577, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandRingEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.14127488, y: 0.30356306, z: 0.045033}
+      rotation: {x: 3.9005835e-10, y: -2.9074346e-17, z: -0.0000000033809575, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandPinkyEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.14139865, y: 0.3093457, z: 0.033782627}
+      rotation: {x: 3.900583e-10, y: -5.682992e-17, z: -0.0000000033809575, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandThumbEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.063497536, y: 0.60274523, z: 0.22297454}
+      rotation: {x: -0.45405424, y: -0.16444567, z: 0.47674698, w: 0.7345098}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandIndexEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.07030166, y: 0.6084541, z: 0.2040272}
+      rotation: {x: -0.59417456, y: 0.6727483, z: 0.37411058, w: -0.23325425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandMiddleEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.07670482, y: 0.6070594, z: 0.20794293}
+      rotation: {x: -0.49146032, y: 0.7142099, z: 0.4608065, w: -0.18981136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandRingEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.0847601, y: 0.601619, z: 0.20928012}
+      rotation: {x: -0.37615263, y: 0.74828184, z: 0.5168582, w: -0.17731637}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandPinkyEffector
+      parentName: Steve_Ctrl_Reference
+      position: {x: 0.08924938, y: 0.5962438, z: 0.20943922}
+      rotation: {x: -0.17875388, y: 0.7930062, z: 0.510213, w: -0.28083962}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_Hips
+      parentName: Steve_Ctrl_Reference
+      position: {x: -0.00000011174907, y: 0.3760364, z: 1.0251962e-11}
+      rotation: {x: 3.061619e-17, y: 1.0100696e-23, z: 0.00000032991377, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftUpLeg
+      parentName: Steve_Ctrl_Hips
+      position: {x: -0.05990943, y: -0.046507224, z: 0}
+      rotation: {x: -0.000041437866, y: 0.000002123734, z: 0.000000745058, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftLeg
+      parentName: Steve_Ctrl_LeftUpLeg
+      position: {x: -0.004847846, y: -0.17514476, z: 0}
+      rotation: {x: 0.000090389374, y: -0.0000019641088, z: -0.0000018553708, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftFoot
+      parentName: Steve_Ctrl_LeftLeg
+      position: {x: 1.7763568e-17, y: -0.14108087, z: 0}
+      rotation: {x: -0.000048951508, y: -0.00000015963181, z: 0.0000007805092, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightUpLeg
+      parentName: Steve_Ctrl_Hips
+      position: {x: 0.05990943, y: -0.046507224, z: 0}
+      rotation: {x: -0.00047805486, y: -0.000005713154, z: 0.00000020861619, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightLeg
+      parentName: Steve_Ctrl_RightUpLeg
+      position: {x: 0.004847846, y: -0.17514476, z: 0}
+      rotation: {x: 0.0010292627, y: 0.0000021323901, z: -0.000001693006, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightFoot
+      parentName: Steve_Ctrl_RightLeg
+      position: {x: -1.7763568e-17, y: -0.14108087, z: 0}
+      rotation: {x: -0.00055120786, y: 0.000003581174, z: 0.0000011496155, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_Spine
+      parentName: Steve_Ctrl_Hips
+      position: {x: -0, y: 0.056163367, z: 0}
+      rotation: {x: 3.061613e-17, y: -1.998378e-23, z: -0.00000065271973, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftShoulder
+      parentName: Steve_Ctrl_Spine
+      position: {x: -0.04250504, y: 0.15070434, z: 0}
+      rotation: {x: 0, y: -0, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftArm
+      parentName: Steve_Ctrl_LeftShoulder
+      position: {x: -0.02441285, y: -0.021314774, z: 0}
+      rotation: {x: 0.0000013969837, y: -0.0000005606562, z: 0.0000017285345, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftForeArm
+      parentName: Steve_Ctrl_LeftArm
+      position: {x: -0.04144158, y: -0.10111172, z: -0.011920239}
+      rotation: {x: -0.0000010095532, y: 0.00000022025819, z: -0.0000016068942, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHand
+      parentName: Steve_Ctrl_LeftForeArm
+      position: {x: -0.03564603, y: -0.09332035, z: 0.04319324}
+      rotation: {x: -0.0000003650823, y: 0.00000033247335, z: 1.2138013e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandThumb1
+      parentName: Steve_Ctrl_LeftHand
+      position: {x: 0.0044417474, y: -0.010005074, z: 0.012417445}
+      rotation: {x: 5.551115e-17, y: 9.7144515e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandThumb2
+      parentName: Steve_Ctrl_LeftHandThumb1
+      position: {x: 0.0030775832, y: -0.012180367, z: 0.012487216}
+      rotation: {x: -2.7755576e-17, y: -5.551115e-17, z: 1.3877788e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandThumb3
+      parentName: Steve_Ctrl_LeftHandThumb2
+      position: {x: 0.0010549927, y: -0.010201454, z: 0.004365902}
+      rotation: {x: 2.7755576e-17, y: -3.122502e-17, z: 5.637851e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandThumb4
+      parentName: Steve_Ctrl_LeftHandThumb3
+      position: {x: 0.00011422157, y: -0.011552849, z: 0.0024405764}
+      rotation: {x: 1.3877788e-17, y: -3.469447e-18, z: -1.1188966e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandIndex1
+      parentName: Steve_Ctrl_LeftHand
+      position: {x: -0.012596311, y: -0.030264815, z: 0.027139114}
+      rotation: {x: -5.551115e-17, y: 8.6736174e-17, z: 2.6931582e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandIndex2
+      parentName: Steve_Ctrl_LeftHandIndex1
+      position: {x: -0.0011726379, y: -0.016656836, z: 0.0051716897}
+      rotation: {x: 3.0531133e-16, y: 1.700029e-16, z: -7.93636e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandIndex3
+      parentName: Steve_Ctrl_LeftHandIndex2
+      position: {x: 0.0035476112, y: -0.009475193, z: 0.0014247942}
+      rotation: {x: 2.7755576e-17, y: -2.8449465e-16, z: 2.359224e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandIndex4
+      parentName: Steve_Ctrl_LeftHandIndex3
+      position: {x: 0.0042152116, y: -0.0077415085, z: 0.001911745}
+      rotation: {x: 2.7755576e-17, y: 2.7755576e-17, z: -3.989864e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandMiddle1
+      parentName: Steve_Ctrl_LeftHand
+      position: {x: -0.012766113, y: -0.032836076, z: 0.017376894}
+      rotation: {x: 9.7144515e-17, y: 6.5919485e-17, z: 1.5308935e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandMiddle2
+      parentName: Steve_Ctrl_LeftHandMiddle1
+      position: {x: 0.0012494754, y: -0.018915405, z: 0.0040298174}
+      rotation: {x: -1.6653345e-16, y: 2.220446e-16, z: -3.1225023e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandMiddle3
+      parentName: Steve_Ctrl_LeftHandMiddle2
+      position: {x: 0.007157297, y: -0.008071403, z: 0.0024023056}
+      rotation: {x: 1.9428903e-16, y: 2.6367794e-16, z: -2.064321e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandMiddle4
+      parentName: Steve_Ctrl_LeftHandMiddle3
+      position: {x: 0.0066508865, y: -0.00637537, z: 0.0019692802}
+      rotation: {x: -2.7755576e-17, y: 2.7755576e-17, z: 1.7347235e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandRing1
+      parentName: Steve_Ctrl_LeftHand
+      position: {x: -0.011675119, y: -0.03512722, z: 0.0057404614}
+      rotation: {x: -4.1633363e-17, y: 1.0061396e-16, z: 2.628106e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandRing2
+      parentName: Steve_Ctrl_LeftHandRing1
+      position: {x: 0.0015876769, y: -0.015694808, z: 0.0031988954}
+      rotation: {x: 5.551115e-17, y: 1.6653345e-16, z: 8.6736174e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandRing3
+      parentName: Steve_Ctrl_LeftHandRing2
+      position: {x: 0.0069503975, y: -0.007340507, z: 0.0024821423}
+      rotation: {x: -9.7144515e-17, y: -1.8041124e-16, z: 3.122502e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandRing4
+      parentName: Steve_Ctrl_LeftHandRing3
+      position: {x: 0.005867548, y: -0.0054315757, z: 0.002338934}
+      rotation: {x: 2.7755576e-17, y: 4.1633363e-17, z: -1.0408341e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandPinky1
+      parentName: Steve_Ctrl_LeftHand
+      position: {x: -0.008855829, y: -0.036699712, z: -0.0029277848}
+      rotation: {x: 2.7755576e-17, y: 1.2316537e-16, z: 3.9161382e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandPinky2
+      parentName: Steve_Ctrl_LeftHandPinky1
+      position: {x: 0.001268196, y: -0.011427936, z: 0.0015747952}
+      rotation: {x: 5.551115e-17, y: -2.7755576e-17, z: 8.6736174e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandPinky3
+      parentName: Steve_Ctrl_LeftHandPinky2
+      position: {x: 0.0051121614, y: -0.0057131383, z: 0.001983726}
+      rotation: {x: 2.220446e-16, y: 3.6082248e-16, z: 2.4633073e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_LeftHandPinky4
+      parentName: Steve_Ctrl_LeftHandPinky3
+      position: {x: 0.0050821877, y: -0.0039706994, z: 0.0018793249}
+      rotation: {x: -8.326673e-17, y: 5.551115e-17, z: 8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightShoulder
+      parentName: Steve_Ctrl_Spine
+      position: {x: 0.04250504, y: 0.15070434, z: 0}
+      rotation: {x: 0, y: 0, z: 5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightArm
+      parentName: Steve_Ctrl_RightShoulder
+      position: {x: 0.02441285, y: -0.021314774, z: 0}
+      rotation: {x: -0.5529808, y: -0.17509797, z: 0.19051385, w: 0.7919959}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightForeArm
+      parentName: Steve_Ctrl_RightArm
+      position: {x: 0.04144158, y: -0.10111172, z: -0.011920239}
+      rotation: {x: -0.19255877, y: -0.28124827, z: 0.08102572, w: 0.93661916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHand
+      parentName: Steve_Ctrl_RightForeArm
+      position: {x: 0.03564603, y: -0.09332035, z: 0.04319324}
+      rotation: {x: -0.008514569, y: 0.022287603, z: -0.010313036, w: 0.99966216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandThumb1
+      parentName: Steve_Ctrl_RightHand
+      position: {x: -0.0044417474, y: -0.010005074, z: 0.012417445}
+      rotation: {x: 0.03195219, y: -0.054101232, z: -0.073236614, w: 0.9953334}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandThumb2
+      parentName: Steve_Ctrl_RightHandThumb1
+      position: {x: -0.0030775832, y: -0.012180367, z: 0.012487216}
+      rotation: {x: -0.028341414, y: 0.053126432, z: 0.11728799, w: 0.99127084}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandThumb3
+      parentName: Steve_Ctrl_RightHandThumb2
+      position: {x: -0.0010549927, y: -0.010201454, z: 0.004365902}
+      rotation: {x: 0.33107874, y: 0.018293554, z: 0.04734818, w: 0.9422369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandThumb4
+      parentName: Steve_Ctrl_RightHandThumb3
+      position: {x: -0.00011422157, y: -0.011552849, z: 0.0024405764}
+      rotation: {x: 0.00000002420131, y: 0.000000027132188, z: 0.000000014447129,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandIndex1
+      parentName: Steve_Ctrl_RightHand
+      position: {x: 0.012596311, y: -0.030264815, z: 0.027139114}
+      rotation: {x: -0.0023386565, y: -0.31203178, z: -0.4769928, w: 0.8216499}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandIndex2
+      parentName: Steve_Ctrl_RightHandIndex1
+      position: {x: 0.0011726379, y: -0.016656836, z: 0.0051716897}
+      rotation: {x: -0.02802099, y: -0.07484401, z: -0.5675109, w: 0.8194782}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandIndex3
+      parentName: Steve_Ctrl_RightHandIndex2
+      position: {x: -0.0035476112, y: -0.009475193, z: 0.0014247942}
+      rotation: {x: -0.0005537358, y: -0.1415611, z: -0.47091883, w: 0.8707443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandIndex4
+      parentName: Steve_Ctrl_RightHandIndex3
+      position: {x: -0.0042152116, y: -0.0077415085, z: 0.001911745}
+      rotation: {x: 0.00000068922566, y: 0.000000046884598, z: -0.00000018658864,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandMiddle1
+      parentName: Steve_Ctrl_RightHand
+      position: {x: 0.012766113, y: -0.032836076, z: 0.017376894}
+      rotation: {x: -0.03947729, y: -0.21053341, z: -0.43389517, w: 0.8751298}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandMiddle2
+      parentName: Steve_Ctrl_RightHandMiddle1
+      position: {x: -0.0012494754, y: -0.018915405, z: 0.0040298174}
+      rotation: {x: -0.08282971, y: -0.093409255, z: -0.5606216, w: 0.818607}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandMiddle3
+      parentName: Steve_Ctrl_RightHandMiddle2
+      position: {x: -0.007157297, y: -0.008071403, z: 0.0024023056}
+      rotation: {x: -0.057559405, y: -0.10214064, z: -0.5216035, w: 0.84509414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandMiddle4
+      parentName: Steve_Ctrl_RightHandMiddle3
+      position: {x: -0.0066508865, y: -0.00637537, z: 0.0019692802}
+      rotation: {x: 0.0000003759803, y: -4.1998946e-14, z: -0.00000009398792, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandRing1
+      parentName: Steve_Ctrl_RightHand
+      position: {x: 0.011675119, y: -0.03512722, z: 0.0057404614}
+      rotation: {x: -0.037657116, y: -0.14038992, z: -0.45621026, w: 0.87792075}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandRing2
+      parentName: Steve_Ctrl_RightHandRing1
+      position: {x: -0.0015876769, y: -0.015694808, z: 0.0031988954}
+      rotation: {x: -0.08457394, y: -0.08932181, z: -0.500975, w: 0.8566755}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandRing3
+      parentName: Steve_Ctrl_RightHandRing2
+      position: {x: -0.0069503975, y: -0.007340507, z: 0.0024821423}
+      rotation: {x: -0.10129658, y: -0.113082126, z: -0.51672167, w: 0.8425854}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandRing4
+      parentName: Steve_Ctrl_RightHandRing3
+      position: {x: -0.005867548, y: -0.0054315757, z: 0.002338934}
+      rotation: {x: 0.0000002972419, y: 0.00000049676163, z: -0.00000002806158, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandPinky1
+      parentName: Steve_Ctrl_RightHand
+      position: {x: 0.008855829, y: -0.036699712, z: -0.0029277848}
+      rotation: {x: -0.055779897, y: -0.054404497, z: -0.554244, w: 0.82869923}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandPinky2
+      parentName: Steve_Ctrl_RightHandPinky1
+      position: {x: -0.001268196, y: -0.011427936, z: 0.0015747952}
+      rotation: {x: -0.06257065, y: -0.06992633, z: -0.36263353, w: 0.92719585}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandPinky3
+      parentName: Steve_Ctrl_RightHandPinky2
+      position: {x: -0.0051121614, y: -0.0057131383, z: 0.001983726}
+      rotation: {x: -0.09928614, y: -0.060050793, z: -0.39474842, w: 0.91143286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_RightHandPinky4
+      parentName: Steve_Ctrl_RightHandPinky3
+      position: {x: -0.0050821877, y: -0.0039706994, z: 0.0018793249}
+      rotation: {x: -0.00000033807564, y: -0.00000034505175, z: 0.000000043023157,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_Neck
+      parentName: Steve_Ctrl_Spine
+      position: {x: -0, y: 0.13839367, z: 0}
+      rotation: {x: 3.0616168e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve_Ctrl_Head
+      parentName: Steve_Ctrl_Neck
+      position: {x: -0, y: 0.05982311, z: 0}
+      rotation: {x: 3.0616168e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cameras
+      parentName: SteveHandRig_V1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

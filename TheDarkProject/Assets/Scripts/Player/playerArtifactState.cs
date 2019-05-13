@@ -17,6 +17,8 @@ public class playerArtifactState : MonoBehaviour
 	ColorGrading testCG;
 	LensDistortion testLD;
 
+    public GameObject greyScaleCG;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class playerArtifactState : MonoBehaviour
 
     		//testVignette.intensity.value = Mathf.Lerp(0.3f, 0.45f, sinWave);
     		testCA.intensity.value = Mathf.Lerp(0.3f, 1.0f, sinWave);
-    		testCG.hueShift.value = Mathf.Lerp(-50f, 50f, sinWave);
+    		//testCG.hueShift.value = Mathf.Lerp(-50f, 50f, sinWave);
     		testLD.intensity.value = Mathf.Lerp(-30f, 30f, sinWave);
     		testLD.centerX.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Sin(Time.realtimeSinceStartup*2.2f)));
     		testLD.centerY.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Cos(Time.realtimeSinceStartup*3f)));
@@ -60,10 +62,12 @@ public class playerArtifactState : MonoBehaviour
     	if(isHoldingArtifact) {
     		artifactInHand.SetActive(true);
     		doEffects();
+            greyScaleCG.SetActive(false);
     	}
     	else {
     		artifactInHand.SetActive(false);
     		RuntimeUtilities.DestroyVolume(testVolume, true, true);
+            greyScaleCG.SetActive(true);
     	}
     }
 
@@ -77,8 +81,8 @@ public class playerArtifactState : MonoBehaviour
         testCA.intensity.Override(1f);
 		testCG = ScriptableObject.CreateInstance<ColorGrading>();
 		testCG.enabled.Override(true);
-        testCG.hueShift.Override(1f);
-        testCG.saturation.Override(-30f);
+        //testCG.hueShift.Override(1f);
+        testCG.saturation.Override(-10f);
 		testLD = ScriptableObject.CreateInstance<LensDistortion>();
 		testLD.enabled.Override(true);
         testLD.intensity.Override(1f);

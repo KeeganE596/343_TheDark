@@ -43,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 
         private double playerStamina;
+        
 
         // Use this for initialization
         private void Start()
@@ -204,7 +205,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
-
+        bool puffed = false;
         private void GetInput(out float speed)
         {
             // Read input
@@ -216,10 +217,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            if(playerStamina <= 5) {
+            if(playerStamina <= 0) {
             	m_IsWalking = true;
+            	puffed = true;
             }
-            else{
+            else if(!puffed) {
             	m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
             }
 #endif
@@ -229,7 +231,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else if(playerStamina < 10 && m_IsWalking) {
             	playerStamina += 0.05;
             }
-            Debug.Log(playerStamina + ", " + m_IsWalking);
+            if(playerStamina >= 10) {
+            	puffed = false;
+            }
+            //Debug.Log(playerStamina + ", " + m_IsWalking);
 
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -272,5 +277,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+
+        
     }
 }

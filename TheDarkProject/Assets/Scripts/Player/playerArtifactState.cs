@@ -11,6 +11,8 @@ public class playerArtifactState : MonoBehaviour
 	GameObject[] dreamObjects;
 	public GameObject artifactInHand;
 
+    GameObject[] collectedArtifacts;
+
 	PostProcessVolume testVolume;
 	Vignette testVignette;
 	ChromaticAberration testCA;
@@ -25,6 +27,7 @@ public class playerArtifactState : MonoBehaviour
         isHoldingArtifact = false;
         dreamObjects = GameObject.FindGameObjectsWithTag("DreamObject");
         artifactInHand.SetActive(false);
+        collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
     }
 
     // Update is called once per frame
@@ -54,6 +57,9 @@ public class playerArtifactState : MonoBehaviour
     			dreamObjects[i].SetActive(false);
     		}
     	}
+
+        collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
+        Debug.Log(collectedArtifacts.Length);
     }
 
     public void changeIsHolding() {

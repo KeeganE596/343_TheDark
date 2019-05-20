@@ -24,6 +24,8 @@ public class ShadowSwitch : MonoBehaviour
     Color vignetteCol = new Color(0,0,0,150);
     Grain grainPP;
 
+    public bool innerTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class ShadowSwitch : MonoBehaviour
         playerHealth = 50;
         dying = false;
 
+        innerTrigger = false;
+
         doEffects();
     }
 
@@ -49,8 +53,15 @@ public class ShadowSwitch : MonoBehaviour
         currentArea = shadowRandomMoveScript.currentArea(areaIndex);
         checkPlayerInArea = currentArea.GetComponent<checkInArea>();
 
-        if(nearPlayer && checkPlayerInArea.getIfInArea()) { 
+
+
+        if(nearPlayer && checkPlayerInArea.getIfInArea() && !innerTrigger) { 
         	shadowDriftScript.Move();
+        	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
+        }
+        else if(nearPlayer && checkPlayerInArea.getIfInArea() && innerTrigger) { 
+        	shadowDriftScript.stopMove();
+        	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         }
         else {
             timer += Time.deltaTime;
@@ -80,7 +91,7 @@ public class ShadowSwitch : MonoBehaviour
         vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
         grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
         grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
-        Debug.Log("nearp: " + nearPlayer + ", randMove: " + moveRandom);
+        //Debug.Log("nearp: " + nearPlayer + ", randMove: " + moveRandom);
     }
 
 

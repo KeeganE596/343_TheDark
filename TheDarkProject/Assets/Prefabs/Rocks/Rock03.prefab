@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071844899227960318}
+  - component: {fileID: 4248990858267875546}
+  - component: {fileID: 2934229361829584870}
   m_Layer: 0
   m_Name: Rock03
   m_TagString: Untagged
@@ -31,6 +33,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4248990858267875546
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812424864599939832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 51.604557
+  m_Height: 196.14334
+  m_Direction: 0
+  m_Center: {x: -8.026123, y: -3.0985832, z: -5.603409}
+--- !u!135 &2934229361829584870
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812424864599939832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 51.577473
+  m_Center: {x: 54.52223, y: 8.850813, z: -56.541252}
 --- !u!1 &5872801982339573211
 GameObject:
   m_ObjectHideFlags: 0

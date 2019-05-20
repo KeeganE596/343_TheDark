@@ -20,6 +20,8 @@ public class playerArtifactState : MonoBehaviour
 	LensDistortion testLD;
 
     public GameObject greyScaleCG;
+    public GameObject pedLight1;
+    public GameObject pedLight2;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,7 @@ public class playerArtifactState : MonoBehaviour
     		testLD.intensity.value = Mathf.Lerp(-30f, 30f, sinWave);
     		testLD.centerX.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Sin(Time.realtimeSinceStartup*2.2f)));
     		testLD.centerY.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Cos(Time.realtimeSinceStartup*3f)));
-    		Debug.Log(testLD.centerY.value);
+    		//Debug.Log(testLD.centerY.value);
     	}
     	else if(dreamObjects[0].activeSelf) {
     		for(int i=0; i<dreamObjects.Length; i++) {
@@ -59,7 +61,7 @@ public class playerArtifactState : MonoBehaviour
     	}
 
         collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
-        Debug.Log(collectedArtifacts.Length);
+        //Debug.Log(collectedArtifacts.Length);
     }
 
     public void changeIsHolding() {
@@ -69,6 +71,8 @@ public class playerArtifactState : MonoBehaviour
     		artifactInHand.SetActive(true);
     		doEffects();
             greyScaleCG.SetActive(false);
+            pedLight1.SetActive(false);
+            pedLight2.SetActive(false);
     	}
     	else {
     		artifactInHand.SetActive(false);
@@ -79,6 +83,7 @@ public class playerArtifactState : MonoBehaviour
 
     //enable the post processing volume
     void doEffects() {
+        Debug.Log("doing effects");
     	testVignette = ScriptableObject.CreateInstance<Vignette>();
     	testVignette.enabled.Override(true);
         testVignette.intensity.Override(0.35f);

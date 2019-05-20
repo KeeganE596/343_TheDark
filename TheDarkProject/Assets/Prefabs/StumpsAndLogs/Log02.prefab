@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2116051507476285704}
+  - component: {fileID: 573312206410773873}
   m_Layer: 0
   m_Name: Log02
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &573312206410773873
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171179510002957005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 24.124748
+  m_Height: 156.16493
+  m_Direction: 0
+  m_Center: {x: 74.78161, y: 40.59195, z: -0.2070576}
 --- !u!1 &6648009327170612053
 GameObject:
   m_ObjectHideFlags: 0

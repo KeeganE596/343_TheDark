@@ -86,6 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365949312222410874}
+  - component: {fileID: 5739930630430820012}
   m_Layer: 0
   m_Name: Oak01
   m_TagString: Untagged
@@ -108,3 +109,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5739930630430820012
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172208291105741069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 73.35968
+  m_Height: 724.20605
+  m_Direction: 1
+  m_Center: {x: 3.5804749, y: -7.4626446, z: -0.8731842}

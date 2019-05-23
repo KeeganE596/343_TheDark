@@ -13,6 +13,8 @@ public class playerRaycastHit : MonoBehaviour
     mainPedestal mainPedestalScript;
 
     public GameObject pedestalArtifact;
+    public GameObject pedestalPointLight;
+    public GameObject pedestalSpotLight;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class playerRaycastHit : MonoBehaviour
         mainPedestalScript = GetComponent<mainPedestal>();
 
         pedestalArtifact.SetActive(false);
+        pedestalPointLight.SetActive(false);
+        pedestalSpotLight.SetActive(false);
 
     }
 
@@ -41,6 +45,8 @@ public class playerRaycastHit : MonoBehaviour
                     pickUpArtifactScript.changeIsHolding();
                     //mainPedestalScript.makePlaced();
                     pedestalArtifact.SetActive(true);
+                    pedestalPointLight.SetActive(true);
+       				pedestalSpotLight.SetActive(true);
                     Debug.Log("put down");
                 }
                 for(int i=0; i<artifacts.Length; i++){

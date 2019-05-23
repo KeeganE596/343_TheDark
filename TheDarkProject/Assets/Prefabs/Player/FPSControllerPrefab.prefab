@@ -3785,6 +3785,8 @@ MonoBehaviour:
   isHoldingArtifact: 0
   artifactInHand: {fileID: 2011777781}
   greyScaleCG: {fileID: 0}
+  pedLight1: {fileID: 0}
+  pedLight2: {fileID: 0}
 --- !u!114 &1288700350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,7 +4582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751950733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: -0.31, z: 2.106}
+  m_LocalPosition: {x: 0.194, y: -0.333, z: 0.597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1288700349}
@@ -5203,8 +5205,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011777781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.39931375, y: -0.54100007, z: 1.98}
-  m_LocalScale: {x: 0.29398, y: 0.29398, z: 0.29398}
+  m_LocalPosition: {x: -0.439, y: -0.422, z: 0.894}
+  m_LocalScale: {x: 0.24278633, y: 0.24278633, z: 0.24278633}
   m_Children: []
   m_Father: {fileID: 1288700349}
   m_RootOrder: 0

@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{D6B57D53-9440-C709-F5A6-6D4B6D5E9C67}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/playerArtifactState.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player/playerRaycastHit.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Vehicles/Aircraft/Scripts/AeroplaneAudio.cs" Line="22" Column="1" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/Player/playerArtifactState.cs" Line="57" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TheDarkProject" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Player" expanded="True">
+                  <Node name="playerArtifactState.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TheDarkProject" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6ff8f835-5900-4066-8a7e-eb0a28196dbf" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

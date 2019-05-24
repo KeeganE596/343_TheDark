@@ -19,16 +19,25 @@ public class ShadowRandomMove : MonoBehaviour
 	Vector3 offset4;
 	Vector3[] offsets;
 
+    GameObject[] planesObjs;
+    Area[] areas;
+
     // Start is called before the first frame update
     void Start()
     {
-		area0Plane = GameObject.FindWithTag("plane0");
+        planesObjs = GameObject.FindGameObjectsWithTag("areaPlane");
+
+        for(int i=0; i<planesObjs.Length; i++) {
+            areas[i] = new Area(0, 16, planesObjs[i]);
+        }
+
+		/*area0Plane = GameObject.FindWithTag("plane0");
 		area1Plane = GameObject.FindWithTag("plane1");
 		area2Plane = GameObject.FindWithTag("plane2");
 		area3Plane = GameObject.FindWithTag("plane3");
 		area4Plane = GameObject.FindWithTag("plane4");
 		area5Plane = GameObject.FindWithTag("plane5");
-		planes = new GameObject[]{area0Plane, area1Plane, area2Plane, area3Plane, area4Plane, area5Plane};
+		planes = new GameObject[]{area0Plane, area1Plane, area2Plane, area3Plane, area4Plane, area5Plane};*/
 
 		Vector3 offset0 = new Vector3(0, 0, 0);
     	Vector3 offset1 = new Vector3(15, 0, 0);
@@ -44,7 +53,7 @@ public class ShadowRandomMove : MonoBehaviour
 
     }
 
-    public Vector3 pickArea(int i) {
+    /*public Vector3 pickArea(int i) {
     	Vector3 newPosition = planes[i].transform.position + pickAreaPoint();
 
     	return newPosition;
@@ -54,11 +63,50 @@ public class ShadowRandomMove : MonoBehaviour
     	int r = Random.Range(0, 5);
 
     	return offsets[r];
-
     }
 
     public GameObject currentArea(int i) {
         Start();
     	return planes[i];
+    }*/
+
+    public Vector3 pickArea(int i) {
+        Vector3 newPosition = planes[i].transform.position + pickAreaPoint();
+
+        return newPosition;
+    }
+
+    Vector3 pickAreaPoint() {
+        int r = Random.Range(0, 5);
+
+        return offsets[r];
+    }
+
+    public GameObject currentArea(int i) {
+        Start();
+        return planes[i];
+    }
+}
+
+public class Area 
+{
+    float minRange;
+    float maxRange;
+    GameObject areaPlane;
+    bool hasObject;
+
+    public Area(float minRange, float maxRange, GameObject areaPlane) {
+        this.minRange = minRange;
+        this.maxRange = maxRange;
+        this.areaPlane = areaPlane;
+        hasObject = true;
+    }
+
+    public void setMin(float min) {
+        this.minRange = min;
+    }
+
+    public void setMax(float max) {
+        this.maxRange = max;
     }
 }

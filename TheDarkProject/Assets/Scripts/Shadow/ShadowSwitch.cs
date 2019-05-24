@@ -11,7 +11,7 @@ public class ShadowSwitch : MonoBehaviour
     checkInArea checkPlayerInArea;
     GameObject currentArea;
     int areaIndex;
-    bool moveRandom;
+
     public GameObject player;
 
     float timer;
@@ -35,7 +35,6 @@ public class ShadowSwitch : MonoBehaviour
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
         currentArea = shadowRandomMoveScript.currentArea(areaIndex);
         checkPlayerInArea = currentArea.GetComponent<checkInArea>();
-        moveRandom = true;
 
         timer = 0;
 
@@ -52,8 +51,6 @@ public class ShadowSwitch : MonoBehaviour
     {
         currentArea = shadowRandomMoveScript.currentArea(areaIndex);
         checkPlayerInArea = currentArea.GetComponent<checkInArea>();
-
-
 
         if(nearPlayer && checkPlayerInArea.getIfInArea() && !innerTrigger) { 
         	shadowDriftScript.Move();
@@ -91,14 +88,12 @@ public class ShadowSwitch : MonoBehaviour
         vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
         grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
         grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
-        //Debug.Log("nearp: " + nearPlayer + ", randMove: " + moveRandom);
     }
 
 
     void OnTriggerEnter(Collider other) {
     	if(other.gameObject.tag == "Player") {
     		nearPlayer = true;
-            moveRandom = false;
     		transform.LookAt(GameObject.FindWithTag("Player").transform.position);
             dying = true;
     	}
@@ -106,7 +101,6 @@ public class ShadowSwitch : MonoBehaviour
     void OnTriggerStay(Collider other) {
     	if(other.gameObject.tag == "Player") {
     		nearPlayer = true;
-            moveRandom = false;
     		transform.LookAt(GameObject.FindWithTag("Player").transform.position);
             dying = true;
     	}
@@ -115,7 +109,6 @@ public class ShadowSwitch : MonoBehaviour
         //if(other.gameObject.tag == "Player") {
         Debug.Log("exit");
             nearPlayer = false;
-            moveRandom = true;
             dying = false;
         //}
     }

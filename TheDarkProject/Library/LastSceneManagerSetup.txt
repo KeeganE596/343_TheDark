@@ -1,4 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FullTestScene.unity
+- path: Assets/Scenes/Movement Tests/ShadowRandomMoveTest.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0

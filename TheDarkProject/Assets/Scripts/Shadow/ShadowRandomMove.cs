@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShadowRandomMove : MonoBehaviour
 {
-	GameObject area0Plane;
+	/*GameObject area0Plane;
 	GameObject area1Plane;
 	GameObject area2Plane;
 	GameObject area3Plane;
 	GameObject area4Plane;
 	GameObject area5Plane;
-	GameObject[] planes;
+	GameObject[] planes;*/
 
 	Vector3 offset0;
 	Vector3 offset1;
@@ -26,9 +26,11 @@ public class ShadowRandomMove : MonoBehaviour
     void Start()
     {
         planesObjs = GameObject.FindGameObjectsWithTag("areaPlane");
+        areas = new Area[6];
 
         for(int i=0; i<planesObjs.Length; i++) {
-            areas[i] = new Area(0, 16, planesObjs[i]);
+            areas[i] = new Area(0, 0, planesObjs[i]);
+            //Debug.Log(i + " new area");
         }
 
 		/*area0Plane = GameObject.FindWithTag("plane0");
@@ -53,38 +55,70 @@ public class ShadowRandomMove : MonoBehaviour
 
     }
 
-    /*public Vector3 pickArea(int i) {
-    	Vector3 newPosition = planes[i].transform.position + pickAreaPoint();
-
-    	return newPosition;
-    }
-
-    Vector3 pickAreaPoint() {
-    	int r = Random.Range(0, 5);
-
-    	return offsets[r];
-    }
-
-    public GameObject currentArea(int i) {
-        Start();
-    	return planes[i];
-    }*/
-
     public Vector3 pickArea(int i) {
-        Vector3 newPosition = planes[i].transform.position + pickAreaPoint();
-
+        updateAreaRanges();
+        Vector3 newPosition = getArea(i).transform.position + pickAreaPoint();
         return newPosition;
     }
 
     Vector3 pickAreaPoint() {
         int r = Random.Range(0, 5);
-
         return offsets[r];
     }
 
-    public GameObject currentArea(int i) {
-        Start();
-        return planes[i];
+    public GameObject currentArea(float i) {
+        //return planes[i];
+        updateAreaRanges();
+        //areas[i].checkForArtifact();
+        return getArea(i);
+    }
+
+    void updateAreaRanges() {
+        int containsArtifact = 0;
+        foreach(Area a in areas) {
+            if(a.checkForArtifact()) {
+                containsArtifact++;
+            }
+        }
+        if(containsArtifact > 0) {
+            int small = 6 - containsArtifact;
+            int range = (100 - (small*5))/containsArtifact;
+            int min = 0;
+            int max = range;
+            foreach(Area a in areas) {
+                if(a.checkForArtifact()) {
+                    a.setMin(min);
+                    a.setMax(max);
+                    min = min + range;
+                    max = max + range;
+                }
+                else {
+                    a.setMin(min);
+                    a.setMax(min + 5);
+                    min = min + 5;
+                    max = max + 5;
+                }
+               // Debug.Log("min: " + a.getMin() + ", max: " + a.getMax());
+            }
+        }
+    }
+
+    GameObject getArea(float i) {
+        foreach(Area a in areas){
+            if(i > a.getMin() && i < a.getMax()){
+                return a.getAreaPlane();
+            }
+        }
+        return areas[0].getAreaPlane();
+    }
+
+    public bool getIfHasPlayer(float i) {
+        foreach(Area a in areas){
+            if(i > a.getMin() && i < a.getMax()){
+                return a.checkForPlayer();
+            }
+        }
+        return false;
     }
 }
 
@@ -95,18 +129,42 @@ public class Area
     GameObject areaPlane;
     bool hasObject;
 
+    checkInArea artCheckScript;
+
     public Area(float minRange, float maxRange, GameObject areaPlane) {
         this.minRange = minRange;
         this.maxRange = maxRange;
         this.areaPlane = areaPlane;
         hasObject = true;
+
+        artCheckScript = areaPlane.GetComponent<checkInArea>();
     }
 
     public void setMin(float min) {
-        this.minRange = min;
+        minRange = min;
     }
 
     public void setMax(float max) {
-        this.maxRange = max;
+        maxRange = max;
+    }
+
+    public float getMin() {
+        return minRange;
+    }
+
+    public float getMax() {
+        return maxRange;
+    }
+
+    public GameObject getAreaPlane() {
+        return areaPlane;
+    }
+
+    public bool checkForArtifact() {
+        return artCheckScript.getHasArtifact();
+    }
+
+    public bool checkForPlayer() {
+        return artCheckScript.getHasPlayer();
     }
 }

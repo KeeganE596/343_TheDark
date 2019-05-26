@@ -8,9 +8,8 @@ public class ShadowSwitch : MonoBehaviour
     bool nearPlayer;
 	ShadowDrift shadowDriftScript;
     ShadowRandomMove shadowRandomMoveScript;
-    checkInArea checkPlayerInArea;
-    GameObject currentArea;
     int areaIndex;
+    bool hasPlayerInArea;
 
     public GameObject player;
 
@@ -33,8 +32,7 @@ public class ShadowSwitch : MonoBehaviour
         areaIndex = 0;
         shadowDriftScript = GetComponent<ShadowDrift>();
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
-        currentArea = shadowRandomMoveScript.currentArea(areaIndex);
-        checkPlayerInArea = currentArea.GetComponent<checkInArea>();
+        hasPlayerInArea = false;
 
         timer = 0;
 
@@ -49,14 +47,13 @@ public class ShadowSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentArea = shadowRandomMoveScript.currentArea(areaIndex);
-        checkPlayerInArea = currentArea.GetComponent<checkInArea>();
+        hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
 
-        if(nearPlayer && checkPlayerInArea.getIfInArea() && !innerTrigger) { 
+        if(nearPlayer && hasPlayerInArea && !innerTrigger) { //if in area and close to player
         	shadowDriftScript.Move();
         	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         }
-        else if(nearPlayer && checkPlayerInArea.getIfInArea() && innerTrigger) { 
+        else if(nearPlayer && hasPlayerInArea && innerTrigger) { //if in area and right near player
         	shadowDriftScript.stopMove();
         	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         }
@@ -64,15 +61,13 @@ public class ShadowSwitch : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if(checkPlayerInArea.getIfInArea() && timer > 1) {
+        if(hasPlayerInArea && timer > 1) {  //if in same area as player but not close
             transform.position = shadowRandomMoveScript.pickArea(areaIndex);
             timer = 0;
         }
 
-        if(!nearPlayer && timer > 2) {
-            areaIndex = Random.Range(0, 6);
-            currentArea = shadowRandomMoveScript.currentArea(areaIndex);
-            checkPlayerInArea = currentArea.GetComponent<checkInArea>();
+        if(!nearPlayer && timer > 2) {  //if not in same area as player
+            areaIndex = Random.Range(0, 100);
             transform.position = shadowRandomMoveScript.pickArea(areaIndex);
 
             timer = 0;
@@ -85,9 +80,11 @@ public class ShadowSwitch : MonoBehaviour
             playerHealth += 0.1f;        
         }
 
-        vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
-        grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
-        grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
+        //Debug.Log("np: " + nearPlayer + ", ai: " + areaIndex + ", hasP: " + hasPlayerInArea);
+
+        //vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
+        //grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
+        //grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
     }
 
 
@@ -106,11 +103,10 @@ public class ShadowSwitch : MonoBehaviour
     	}
     }
     void OnTriggerExit(Collider other) {
-        //if(other.gameObject.tag == "Player") {
-        Debug.Log("exit");
+        if(other.gameObject.tag == "Player") {
             nearPlayer = false;
             dying = false;
-        //}
+        }
     }
 
     void doEffects() {

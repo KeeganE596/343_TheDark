@@ -5,32 +5,39 @@ using UnityEngine;
 public class checkInArea : MonoBehaviour
 {
 
-	bool playerIn;
+	bool hasPlayer;
+    bool hasArtifact;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerIn = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hasPlayer = false;
+        hasArtifact = false;
     }
 
     void OnTriggerEnter(Collider other) {
     	if(other.gameObject.tag == "Player") {
-    		playerIn = true;
+    		hasPlayer = true;
     	}
-    }
-    void OnTriggerExit(Collider other) {
-    	if(other.gameObject.tag == "Player") {
-    		playerIn = false;
-    	}
+        if(other.gameObject.tag == "Artifact") {
+            hasArtifact = true;
+        }
     }
 
-    public bool getIfInArea() {
-    	return playerIn;
+    void OnTriggerExit(Collider other) {
+    	if(other.gameObject.tag == "Player") {
+    		hasPlayer = false;
+    	}
+        if(other.gameObject.tag == "Artifact") {
+            hasArtifact = false;
+        }
+    }
+
+    public bool getHasPlayer() {
+    	return hasPlayer;
+    }
+
+    public bool getHasArtifact() {
+        return hasArtifact;
     }
 }

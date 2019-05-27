@@ -16,6 +16,8 @@ TagManager:
   - CollectedArtifact
   - Fire
   - areaPlane
+  - ActiveArtifact
+  - inHandArtifact
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - 
   - PostProcessing
   - Terrain
-  - 
+  - ActiveArtifact
   - 
   - 
   - 

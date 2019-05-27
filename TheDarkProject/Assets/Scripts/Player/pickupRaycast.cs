@@ -8,7 +8,9 @@ public class pickupRaycast : MonoBehaviour
 	Ray ray;
     RaycastHit hit;
     
-    GameObject[] artifacts;
+    GameObject[] activeArtifacts;
+    GameObject[] collectedArtifacts;
+    GameObject[] inHandArtifacts;
     playerArtifactState pickUpArtifactScript;
     mainPedestal mainPedestalScript;
 
@@ -16,44 +18,61 @@ public class pickupRaycast : MonoBehaviour
     public GameObject pedestalPointLight;
     public GameObject pedestalSpotLight;
 
+    string currentHolding;
+
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
 
-        artifacts = GameObject.FindGameObjectsWithTag("Artifact");
+        activeArtifacts = GameObject.FindGameObjectsWithTag("ActiveArtifact");
+        collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
+        inHandArtifacts = GameObject.FindGameObjectsWithTag("inHandArtifact");
         pickUpArtifactScript = GetComponent<playerArtifactState>();
         mainPedestalScript = GetComponent<mainPedestal>();
 
         pedestalArtifact.SetActive(false);
         pedestalPointLight.SetActive(false);
         pedestalSpotLight.SetActive(false);
+        currentHolding = "";
 
+        foreach(GameObject a in collectedArtifacts) {
+            a.SetActive(false);
+        }
+        foreach(GameObject a in inHandArtifacts) {
+            a.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
-        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
 
         if(Physics.Raycast(ray, out hit))
 	    {
-            //print(hit.collider.name);
             if (Input.GetMouseButtonDown(0)) {
                 if(hit.collider.name == "mainPedestal" && pickUpArtifactScript.isHoldingArtifact) {
                     pickUpArtifactScript.changeIsHolding();
-                    //mainPedestalScript.makePlaced();
-                    pedestalArtifact.SetActive(true);
                     pedestalPointLight.SetActive(true);
        				pedestalSpotLight.SetActive(true);
-                    Debug.Log("put down");
+                    for(int i=0; i<collectedArtifacts.Length; i++) {
+                        if(collectedArtifacts[i].name == currentHolding) {
+                            collectedArtifacts[i].SetActive(true);
+                        }
+                        if(inHandArtifacts[i].name == currentHolding) {
+                            inHandArtifacts[i].SetActive(false);
+                        }
+                    }
                 }
-                for(int i=0; i<artifacts.Length; i++){
-                    if(hit.collider.name == "artifact"){
-                        Debug.Log("pick up");
+                for(int i=0; i<activeArtifacts.Length; i++){
+                    if(hit.collider.tag == "ActiveArtifact"){
                         pickUpArtifactScript.changeIsHolding();
                         hit.collider.gameObject.SetActive(false);
+                        currentHolding = hit.collider.name;
+                        if(inHandArtifacts[i].name == currentHolding) {
+                            inHandArtifacts[i].SetActive(true);
+                        }
                     }   
                 }
                            

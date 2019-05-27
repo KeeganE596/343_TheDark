@@ -82,9 +82,9 @@ public class ShadowSwitch : MonoBehaviour
 
         //Debug.Log("np: " + nearPlayer + ", ai: " + areaIndex + ", hasP: " + hasPlayerInArea);
 
-        //vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
-        //grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
-        //grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
+        vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
+        grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
+        grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
     }
 
 

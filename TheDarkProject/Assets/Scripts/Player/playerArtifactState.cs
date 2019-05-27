@@ -9,9 +9,6 @@ public class playerArtifactState : MonoBehaviour
 	public bool isHoldingArtifact;
 
 	GameObject[] dreamObjects;
-	public GameObject artifactInHand;
-
-    GameObject[] collectedArtifacts;
 
 	PostProcessVolume testVolume;
 	Vignette testVignette;
@@ -28,8 +25,6 @@ public class playerArtifactState : MonoBehaviour
     {
         isHoldingArtifact = false;
         dreamObjects = GameObject.FindGameObjectsWithTag("DreamObject");
-        artifactInHand.SetActive(false);
-        collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
     }
 
     // Update is called once per frame
@@ -59,23 +54,18 @@ public class playerArtifactState : MonoBehaviour
     			dreamObjects[i].SetActive(false);
     		}
     	}
-
-        collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
-        //Debug.Log(collectedArtifacts.Length);
     }
 
     public void changeIsHolding() {
     	isHoldingArtifact = !isHoldingArtifact;
     	
     	if(isHoldingArtifact) {
-    		artifactInHand.SetActive(true);
     		doEffects();
             greyScaleCG.SetActive(false);
             pedLight1.SetActive(false);
             pedLight2.SetActive(false);
     	}
     	else {
-    		artifactInHand.SetActive(false);
     		RuntimeUtilities.DestroyVolume(testVolume, true, true);
             greyScaleCG.SetActive(true);
     	}
@@ -83,7 +73,7 @@ public class playerArtifactState : MonoBehaviour
 
     //enable the post processing volume
     void doEffects() {
-        Debug.Log("doing effects");
+        //Debug.Log("doing effects");
     	testVignette = ScriptableObject.CreateInstance<Vignette>();
     	testVignette.enabled.Override(true);
         testVignette.intensity.Override(0.35f);

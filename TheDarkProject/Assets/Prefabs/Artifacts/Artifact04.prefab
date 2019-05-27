@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8695323447795726331}
   - component: {fileID: 832966967695519894}
+  - component: {fileID: -370102049003310837}
   m_Layer: 0
   m_Name: Artifact04
   m_TagString: Artifact
@@ -102,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5688230239053530600}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.063, y: 1.682, z: 0.014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.00075433, y: 0.00075433, z: 0.00075433}
   m_Children:
   - {fileID: 8560709146937108907}
@@ -122,3 +123,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 161.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &-370102049003310837
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688230239053530600}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: bf76c8a310fdd8a4abbde47bb1ba7621, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: bf76c8a310fdd8a4abbde47bb1ba7621, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

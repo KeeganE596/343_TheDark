@@ -25,6 +25,10 @@ public class ShadowSwitch : MonoBehaviour
 
     public bool innerTrigger;
 
+    //Animation control vars
+    Animator shAnim;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,9 @@ public class ShadowSwitch : MonoBehaviour
         shadowDriftScript = GetComponent<ShadowDrift>();
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
         hasPlayerInArea = false;
+
+        //Getting animation components
+        shAnim = GetComponentInChildren<Animator>();
 
         timer = 0;
 
@@ -73,7 +80,10 @@ public class ShadowSwitch : MonoBehaviour
             timer = 0;
         }
 
-       	if(dying && playerHealth >= 0) {
+        //Running the Shadows animations
+        ShadowAnimate();
+        
+        if (dying && playerHealth >= 0) {
        		playerHealth -= 0.1f;
        	}
         else if(!dying && playerHealth <= 50) {
@@ -120,6 +130,31 @@ public class ShadowSwitch : MonoBehaviour
         grainPP.size.Override(1f);
 
         ppVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignettePP, grainPP);
+    }
+
+    void ShadowAnimate()
+    {
+        //Calling on player animator
+        if (nearPlayer)
+        {
+            shAnim.SetBool("Spot", true);
+        }
+        if (!nearPlayer)
+        {
+            shAnim.SetBool("Spot", false);
+        }
+
+        //Testing, can be deleted
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            shAnim.SetBool("Spot", true);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            shAnim.SetBool("Spot", false);
+        }
+
+        print(shAnim.GetBool("Spot"));
     }
 
     float map(float s, float a1, float a2, float b1, float b2) {

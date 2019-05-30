@@ -40,7 +40,7 @@ public class ShadowHeightRaycast : MonoBehaviour
                 //transform.position = newY;
         	}
 	    }
-        transform.position += Vector3.up * distance;
+        //transform.position += Vector3.up * distance;
 	    /*else {
 	    	Debug.Log("something inbetween");
             gameObject.transform.position += Vector3.up * 0.5f;

@@ -54,15 +54,15 @@ public class ShadowSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
 
         if(nearPlayer && hasPlayerInArea && !innerTrigger) { //if in area and close to player
         	shadowDriftScript.Move();
-        	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
+        	
         }
         else if(nearPlayer && hasPlayerInArea && innerTrigger) { //if in area and right near player
-        	shadowDriftScript.stopMove();
-        	transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
+        	//shadowDriftScript.stopMove();
         }
         else {
             timer += Time.deltaTime;
@@ -95,6 +95,8 @@ public class ShadowSwitch : MonoBehaviour
         vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
         grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
         grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
+
+        //Debug.Log("near: " + nearPlayer);
     }
 
 
@@ -154,7 +156,7 @@ public class ShadowSwitch : MonoBehaviour
             shAnim.SetBool("Spot", false);
         }
 
-        print(shAnim.GetBool("Spot"));
+//        print(shAnim.GetBool("Spot"));
     }
 
     float map(float s, float a1, float a2, float b1, float b2) {

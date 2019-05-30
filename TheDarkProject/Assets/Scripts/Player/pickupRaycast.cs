@@ -14,9 +14,9 @@ public class pickupRaycast : MonoBehaviour
     playerArtifactState pickUpArtifactScript;
     mainPedestal mainPedestalScript;
 
-    public GameObject pedestalArtifact;
     public GameObject pedestalPointLight;
-    public GameObject pedestalSpotLight;
+    int numCollectedArtifacts;
+    bool gameWon;
 
     string currentHolding;
 
@@ -31,10 +31,8 @@ public class pickupRaycast : MonoBehaviour
         pickUpArtifactScript = GetComponent<playerArtifactState>();
         mainPedestalScript = GetComponent<mainPedestal>();
 
-        pedestalArtifact.SetActive(false);
         pedestalPointLight.SetActive(false);
-        pedestalSpotLight.SetActive(false);
-        currentHolding = "";
+        currentHolding = null;
 
         foreach(GameObject a in collectedArtifacts) {
             a.SetActive(false);
@@ -42,6 +40,8 @@ public class pickupRaycast : MonoBehaviour
         foreach(GameObject a in inHandArtifacts) {
             a.SetActive(false);
         }
+        numCollectedArtifacts = 0;
+        gameWon = false;
     }
 
     // Update is called once per frame
@@ -51,32 +51,40 @@ public class pickupRaycast : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit))
 	    {
-            if (Input.GetMouseButtonDown(0)) {
+            if(Input.GetMouseButtonDown(0)) {
                 if(hit.collider.name == "mainPedestal" && pickUpArtifactScript.isHoldingArtifact) {
                     pickUpArtifactScript.changeIsHolding();
                     pedestalPointLight.SetActive(true);
-       				pedestalSpotLight.SetActive(true);
                     for(int i=0; i<collectedArtifacts.Length; i++) {
                         if(collectedArtifacts[i].name == currentHolding) {
                             collectedArtifacts[i].SetActive(true);
+                            numCollectedArtifacts++;
                         }
                         if(inHandArtifacts[i].name == currentHolding) {
                             inHandArtifacts[i].SetActive(false);
                         }
                     }
+                    currentHolding = null;
                 }
                 for(int i=0; i<activeArtifacts.Length; i++){
-                    if(hit.collider.tag == "ActiveArtifact"){
+                    if(hit.collider.tag == "ActiveArtifact" && currentHolding == null){
                         pickUpArtifactScript.changeIsHolding();
                         hit.collider.gameObject.SetActive(false);
                         currentHolding = hit.collider.name;
-                        if(inHandArtifacts[i].name == currentHolding) {
-                            inHandArtifacts[i].SetActive(true);
+                        foreach(GameObject a in inHandArtifacts) {
+                            if(a.name == currentHolding) {
+                                a.SetActive(true);
+                            }
                         }
                     }   
                 }
                            
             }
         }
+
+        if(numCollectedArtifacts == 5) {
+            gameWon = true;
+        }
+        Debug.Log(numCollectedArtifacts + ", " + gameWon);
     }
 }

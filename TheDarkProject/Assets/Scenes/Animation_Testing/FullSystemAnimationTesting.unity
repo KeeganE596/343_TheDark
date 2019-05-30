@@ -1003,16 +1003,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 393611247}
     m_Modifications:
-    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
-        type: 3}
-      propertyPath: m_Name
-      value: Artifact05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
-        type: 3}
-      propertyPath: m_TagString
-      value: CollectedArtifact
-      objectReference: {fileID: 0}
     - target: {fileID: 141806712864115854, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1082,6 +1072,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0008840107
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
+        type: 3}
+      propertyPath: m_Name
+      value: Artifact05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
+        type: 3}
+      propertyPath: m_TagString
+      value: CollectedArtifact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cef34f5f13db4f25bf41e61b71b1c8a, type: 3}
@@ -3081,16 +3081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 393611247}
     m_Modifications:
-    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
-        type: 3}
-      propertyPath: m_Name
-      value: Artifact01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
-        type: 3}
-      propertyPath: m_TagString
-      value: CollectedArtifact
-      objectReference: {fileID: 0}
     - target: {fileID: 6793735519488996280, guid: 9a74abd2148d749cb896988eed5b3d5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3160,6 +3150,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0011296708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
+        type: 3}
+      propertyPath: m_Name
+      value: Artifact01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
+        type: 3}
+      propertyPath: m_TagString
+      value: CollectedArtifact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a74abd2148d749cb896988eed5b3d5a, type: 3}
@@ -5693,7 +5693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &649973145
 Transform:
   m_ObjectHideFlags: 0
@@ -10239,7 +10239,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pedestalPointLight
       value: 
-      objectReference: {fileID: 649973144}
+      objectReference: {fileID: 2023644457}
     - target: {fileID: 7586580183283938111, guid: d6e8f2560631cb44793479e11f9de3d6,
         type: 3}
       propertyPath: pedestalArtifact
@@ -15357,16 +15357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9318915}
     m_Modifications:
-    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
-        type: 3}
-      propertyPath: m_Name
-      value: Artifact05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
-        type: 3}
-      propertyPath: m_TagString
-      value: ActiveArtifact
-      objectReference: {fileID: 0}
     - target: {fileID: 141806712864115854, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15421,6 +15411,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
+        type: 3}
+      propertyPath: m_Name
+      value: Artifact05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011745937614372509, guid: 7cef34f5f13db4f25bf41e61b71b1c8a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ActiveArtifact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cef34f5f13db4f25bf41e61b71b1c8a, type: 3}
@@ -15952,16 +15952,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9318915}
     m_Modifications:
-    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
-        type: 3}
-      propertyPath: m_Name
-      value: Artifact01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
-        type: 3}
-      propertyPath: m_TagString
-      value: ActiveArtifact
-      objectReference: {fileID: 0}
     - target: {fileID: 6793735519488996280, guid: 9a74abd2148d749cb896988eed5b3d5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16026,6 +16016,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0011454412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
+        type: 3}
+      propertyPath: m_Name
+      value: Artifact01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499456196325048747, guid: 9a74abd2148d749cb896988eed5b3d5a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ActiveArtifact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a74abd2148d749cb896988eed5b3d5a, type: 3}
@@ -17457,6 +17457,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShadowSteve
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388983847335780190, guid: 7ba440c07f7dcf542b4cd90603007bde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7388983847335780188, guid: 7ba440c07f7dcf542b4cd90603007bde,
         type: 3}

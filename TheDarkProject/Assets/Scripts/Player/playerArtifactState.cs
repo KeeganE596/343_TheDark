@@ -17,8 +17,7 @@ public class playerArtifactState : MonoBehaviour
 	LensDistortion testLD;
 
     public GameObject greyScaleCG;
-    public GameObject pedLight1;
-    public GameObject pedLight2;
+    //public GameObject pedLight1;
 
     //Animation control vars
     Animator plAnim;
@@ -55,11 +54,11 @@ public class playerArtifactState : MonoBehaviour
     		testLD.centerY.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Cos(Time.realtimeSinceStartup*3f)));
     		//Debug.Log(testLD.centerY.value);
     	}
-    	//else if(dreamObjects[0].activeSelf) {
-    	//	for(int i=0; i<dreamObjects.Length; i++) {
-    	//		dreamObjects[i].SetActive(false);
-    	//	}
-    	//}
+    	else if(dreamObjects[0].activeSelf) {
+    		for(int i=0; i<dreamObjects.Length; i++) {
+    			dreamObjects[i].SetActive(false);
+    		}
+    	}
     }
 
     public void changeIsHolding() {
@@ -68,8 +67,7 @@ public class playerArtifactState : MonoBehaviour
     	if(isHoldingArtifact) {
     		doEffects();
             greyScaleCG.SetActive(false);
-            pedLight1.SetActive(false);
-            pedLight2.SetActive(false);
+            //pedLight1.SetActive(false);
 
             //Calling on player animator
             plAnim.SetBool("Carry", true);

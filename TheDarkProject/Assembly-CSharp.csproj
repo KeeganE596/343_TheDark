@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Shadow\shadowInnerTrigger.cs" />
      <Compile Include="Assets\Scripts\Shadow\ShadowRandomMove.cs" />
      <Compile Include="Assets\Scripts\Shadow\ShadowSwitch.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/Guest/Desktop/343_TheDark/TheDarkProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

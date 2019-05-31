@@ -9,13 +9,13 @@ public class ShadowDrift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //yPos = gameObject.transform.position.y;
+        yPos = gameObject.transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-     	  //yPos = gameObject.transform.position.y;
+     	  yPos = gameObject.transform.position.y;
     }
 
     public void Move() {
@@ -23,16 +23,16 @@ public class ShadowDrift : MonoBehaviour
     	transform.LookAt(GameObject.FindWithTag("Player").transform.position);
     	transform.Translate(Vector3.forward * Time.deltaTime*3); 
 
-        //Vector3 vec = transform.position;
-        //vec.y += (0f-yPos);
-        //transform.position = vec;
+        Vector3 vec = transform.position;
+        vec.y += (0f-yPos);
+        transform.position = vec;
     }
 
     public void stopMove()  {
         transform.LookAt(GameObject.FindWithTag("Player").transform.position);
 
-        //Vector3 vec = transform.position;
-        //vec.y += (0f-yPos);
-        //transform.position = vec;
+        Vector3 vec = transform.position;
+        vec.y += (0f-yPos);
+        transform.position = vec;
     }
 }

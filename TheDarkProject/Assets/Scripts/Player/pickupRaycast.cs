@@ -85,6 +85,5 @@ public class pickupRaycast : MonoBehaviour
         if(numCollectedArtifacts == 5) {
             gameWon = true;
         }
-        Debug.Log(numCollectedArtifacts + ", " + gameWon);
     }
 }

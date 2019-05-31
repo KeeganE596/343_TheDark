@@ -54,15 +54,16 @@ public class ShadowSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(nearPlayer + ", " + innerTrigger);
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
 
-        if(nearPlayer && hasPlayerInArea && !innerTrigger) { //if in area and close to player
+        if(nearPlayer && hasPlayerInArea) { //if in area and close to player
         	shadowDriftScript.Move();
         	
         }
         else if(nearPlayer && hasPlayerInArea && innerTrigger) { //if in area and right near player
-        	//shadowDriftScript.stopMove();
+        	shadowDriftScript.stopMove();
         }
         else {
             timer += Time.deltaTime;

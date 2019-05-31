@@ -17,7 +17,7 @@ public class ShadowHeightRaycast : MonoBehaviour
         Ray downRay = new Ray(transform.position, Vector3.down);
         Ray upRay = new Ray(transform.position, Vector3.up);
         RaycastHit downHit;
-        RaycastHit upHit;
+        //RaycastHit upHit;
         float distance = 0;
 
         /*if(Physics.Raycast(upRay, out upHit, 200, layerMask)) {

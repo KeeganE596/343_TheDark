@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class ShadowRandomMove : MonoBehaviour
 {
-    /*GameObject area0Plane;
-	GameObject area1Plane;
-	GameObject area2Plane;
-	GameObject area3Plane;
-	GameObject area4Plane;
-	GameObject area5Plane;
-	GameObject[] planes;*/
-
     Vector3 offset0;
     Vector3 offset1;
     Vector3 offset2;
@@ -31,16 +23,7 @@ public class ShadowRandomMove : MonoBehaviour
         for (int i = 0; i < planesObjs.Length; i++)
         {
             areas[i] = new Area(0, 0, planesObjs[i]);
-            //Debug.Log(i + " new area");
         }
-
-        /*area0Plane = GameObject.FindWithTag("plane0");
-		area1Plane = GameObject.FindWithTag("plane1");
-		area2Plane = GameObject.FindWithTag("plane2");
-		area3Plane = GameObject.FindWithTag("plane3");
-		area4Plane = GameObject.FindWithTag("plane4");
-		area5Plane = GameObject.FindWithTag("plane5");
-		planes = new GameObject[]{area0Plane, area1Plane, area2Plane, area3Plane, area4Plane, area5Plane};*/
 
         Vector3 offset0 = new Vector3(0, 0, 0);
         Vector3 offset1 = new Vector3(15, 0, 0);
@@ -71,9 +54,7 @@ public class ShadowRandomMove : MonoBehaviour
 
     public GameObject currentArea(float i)
     {
-        //return planes[i];
         updateAreaRanges();
-        //areas[i].checkForArtifact();
         return getArea(i);
     }
 
@@ -109,7 +90,6 @@ public class ShadowRandomMove : MonoBehaviour
                     min = min + 5;
                     max = max + 5;
                 }
-                // Debug.Log("min: " + a.getMin() + ", max: " + a.getMax());
             }
         }
     }
@@ -144,7 +124,7 @@ public class ShadowRandomMove : MonoBehaviour
         float minRange;
         float maxRange;
         GameObject areaPlane;
-        bool hasObject;
+        //bool hasObject;
 
         checkInArea artCheckScript;
 
@@ -153,7 +133,7 @@ public class ShadowRandomMove : MonoBehaviour
             this.minRange = minRange;
             this.maxRange = maxRange;
             this.areaPlane = areaPlane;
-            hasObject = true;
+            //hasObject = true;
 
             artCheckScript = areaPlane.GetComponent<checkInArea>();
         }

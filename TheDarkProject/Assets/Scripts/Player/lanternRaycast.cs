@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class lanternRaycast : MonoBehaviour
 {
+
 	Camera cam;
-	Ray ray;
-    RaycastHit hit;
+    int layerMask = 1 << 11;
 
     public Light playerLight;
 
@@ -19,18 +19,19 @@ public class lanternRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
-        //Debug.DrawRay(ray.origin, ray.direction * 100, Color.green);
+        Ray ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
+        RaycastHit hit;
+        //Debug.DrawRay(ray.origin, ray.direction * 400, Color.green);
 
-        if(Physics.Raycast(ray, out hit)) {
-        	if(hit.collider.name == "test") {
-        		playerLight.intensity = 3f;
-        		playerLight.range = 8;
+        if(Physics.Raycast(ray, out hit, 400, layerMask)) {
+        	if(hit.collider.tag == "Podium") {
+        		playerLight.intensity = 2.5f;
+        		playerLight.range = 8.5f;
         	}
 	    }
 	    else {
-	    	playerLight.intensity = 1.4f;
-	    	playerLight.range = 7;
+	    	playerLight.intensity = 1.8f;
+	    	playerLight.range = 8f;
 	    }
     }
 }

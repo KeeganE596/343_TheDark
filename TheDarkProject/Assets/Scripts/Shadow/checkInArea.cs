@@ -19,7 +19,7 @@ public class checkInArea : MonoBehaviour
     	if(other.gameObject.tag == "Player") {
     		hasPlayer = true;
     	}
-        if(other.gameObject.tag == "Artifact") {
+        if(other.gameObject.tag == "ActiveArtifact") {
             hasArtifact = true;
         }
     }
@@ -28,7 +28,7 @@ public class checkInArea : MonoBehaviour
     	if(other.gameObject.tag == "Player") {
     		hasPlayer = false;
     	}
-        if(other.gameObject.tag == "Artifact") {
+        if(other.gameObject.tag == "ActiveArtifact") {
             hasArtifact = false;
         }
     }

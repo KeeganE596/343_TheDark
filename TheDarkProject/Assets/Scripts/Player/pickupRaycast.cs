@@ -52,7 +52,7 @@ public class pickupRaycast : MonoBehaviour
         if(Physics.Raycast(ray, out hit))
 	    {
             if(Input.GetMouseButtonDown(0)) {
-                if(hit.collider.name == "mainPedestal" && pickUpArtifactScript.isHoldingArtifact) {
+                if(hit.collider.tag == "Pedestal" && pickUpArtifactScript.isHoldingArtifact) {
                     pickUpArtifactScript.changeIsHolding();
                     pedestalPointLight.SetActive(true);
                     for(int i=0; i<collectedArtifacts.Length; i++) {

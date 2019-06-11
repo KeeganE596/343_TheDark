@@ -54,7 +54,7 @@ public class ShadowSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(nearPlayer + ", " + innerTrigger);
+        //Debug.Log(nearPlayer + ", " + innerTrigger);
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
 
@@ -91,13 +91,10 @@ public class ShadowSwitch : MonoBehaviour
             playerHealth += 0.1f;        
         }
 
-        //Debug.Log("np: " + nearPlayer + ", ai: " + areaIndex + ", hasP: " + hasPlayerInArea);
-
+        //Post processing for player when close
         vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
         grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
         grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
-
-        //Debug.Log("near: " + nearPlayer);
     }
 
 

@@ -25,11 +25,11 @@ public class ShadowRandomMove : MonoBehaviour
             areas[i] = new Area(0, 0, planesObjs[i]);
         }
 
-        Vector3 offset0 = new Vector3(0, 0, 0);
-        Vector3 offset1 = new Vector3(15, 0, 0);
-        Vector3 offset2 = new Vector3(-15, 0, 0);
-        Vector3 offset3 = new Vector3(0, 0, 15);
-        Vector3 offset4 = new Vector3(0, 0, -15);
+        Vector3 offset0 = new Vector3(0, 100, 0);
+        Vector3 offset1 = new Vector3(15, 100, 0);
+        Vector3 offset2 = new Vector3(-15, 100, 0);
+        Vector3 offset3 = new Vector3(0, 100, 15);
+        Vector3 offset4 = new Vector3(0, 100, -15);
         offsets = new Vector3[] { offset0, offset1, offset2, offset3, offset4 };
     }
 

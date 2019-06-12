@@ -4,12 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - plane1
-  - plane2
-  - plane0
-  - plane3
-  - plane4
-  - plane5
   - Artifact
   - DreamObject
   - Pedestal
@@ -20,6 +14,7 @@ TagManager:
   - inHandArtifact
   - editingLight
   - Podium
+  - Terrain
   layers:
   - Default
   - TransparentFX

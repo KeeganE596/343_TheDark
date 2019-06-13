@@ -24,6 +24,15 @@ public class checkInArea : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other) {
+        if(other.gameObject.tag == "Player") {
+            hasPlayer = true;
+        }
+        if(other.gameObject.tag == "ActiveArtifact") {
+            hasArtifact = true;
+        }
+    }
+
     void OnTriggerExit(Collider other) {
     	if(other.gameObject.tag == "Player") {
     		hasPlayer = false;

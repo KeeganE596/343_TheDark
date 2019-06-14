@@ -20,9 +20,12 @@ public class pickupRaycast : MonoBehaviour
 
     string currentHolding;
 
+    GameObject shadow;
+    ShadowRandomMove shadowRandomMoveScript;
+    ShadowSwitch shadowSwitchScript;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         cam = GetComponent<Camera>();
 
         activeArtifacts = GameObject.FindGameObjectsWithTag("ActiveArtifact");
@@ -42,19 +45,23 @@ public class pickupRaycast : MonoBehaviour
         }
         numCollectedArtifacts = 0;
         gameWon = false;
+
+        shadow = GameObject.FindWithTag("Shadow");
+        shadowRandomMoveScript = shadow.GetComponent<ShadowRandomMove>();
+        shadowSwitchScript = shadow.GetComponent<ShadowSwitch>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
 
-        if(Physics.Raycast(ray, out hit))
+        if(Physics.Raycast(ray, out hit, 3))
 	    {
             if(Input.GetMouseButtonDown(0)) {
                 if(hit.collider.tag == "Pedestal" && pickUpArtifactScript.isHoldingArtifact) {
                     pickUpArtifactScript.changeIsHolding();
                     pedestalPointLight.SetActive(true);
+                    shadowSwitchScript.changeHoldingArtifact();
                     for(int i=0; i<collectedArtifacts.Length; i++) {
                         if(collectedArtifacts[i].name == currentHolding) {
                             collectedArtifacts[i].SetActive(true);
@@ -65,12 +72,14 @@ public class pickupRaycast : MonoBehaviour
                         }
                     }
                     currentHolding = null;
+                    shadowRandomMoveScript.updateAreaRanges();
                 }
                 for(int i=0; i<activeArtifacts.Length; i++){
                     if(hit.collider.tag == "ActiveArtifact" && currentHolding == null){
                         pickUpArtifactScript.changeIsHolding();
-                        hit.collider.gameObject.SetActive(false);
+                        Destroy(hit.collider.gameObject);
                         currentHolding = hit.collider.name;
+                        shadowSwitchScript.changeHoldingArtifact();
                         foreach(GameObject a in inHandArtifacts) {
                             if(a.name == currentHolding) {
                                 a.SetActive(true);
@@ -84,6 +93,9 @@ public class pickupRaycast : MonoBehaviour
 
         if(numCollectedArtifacts == 5) {
             gameWon = true;
+        }
+        if(gameWon) {
+            Debug.Log("Yay");
         }
     }
 }

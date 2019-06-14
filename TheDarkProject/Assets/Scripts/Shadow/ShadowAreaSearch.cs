@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShadowAreaSearch : MonoBehaviour
 {
 	bool doSearch;
-	int area;
 	Vector3 newPosition;
 
 	ShadowRandomMove shadowRandomMoveScript;
@@ -14,7 +13,6 @@ public class ShadowAreaSearch : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         doSearch = false;
-        area = 0;
 
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
         shadowSwitchScript = GetComponent<ShadowSwitch>();
@@ -31,6 +29,7 @@ public class ShadowAreaSearch : MonoBehaviour
     		}
     		transform.LookAt(newPosition);
     		transform.Translate(Vector3.forward * Time.deltaTime*3);
+            transform.position += Vector3.up * 0.02f;
     		transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
     	}
     }

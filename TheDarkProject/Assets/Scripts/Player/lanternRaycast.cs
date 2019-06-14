@@ -24,7 +24,7 @@ public class lanternRaycast : MonoBehaviour
         //Debug.DrawRay(ray.origin, ray.direction * 400, Color.green);
 
         if(Physics.Raycast(ray, out hit, 400, layerMask)) {
-        	if(hit.collider.tag == "Podium") {
+        	if(hit.collider.tag == "PodiumBase") {
                 if(playerLight.intensity < 2.8f) {
                     playerLight.intensity += 0.1f;
                 }

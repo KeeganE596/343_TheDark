@@ -20,7 +20,7 @@ public class ShadowHeightRaycast : MonoBehaviour
         if(Physics.Raycast(downRay, out downHit, 200, layerMask)) {
             if(downHit.collider.tag == "Terrain" && downHit.distance > 0.2) {
                 if(downHit.distance > 5) {
-                    distance = downHit.distance - 2;
+                    distance = downHit.distance - 0.5f;
                 }
                 else {
                     distance = 0.02f;

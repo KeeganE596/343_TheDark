@@ -4,46 +4,25 @@ using UnityEngine;
 
 public class ShadowRandomMove : MonoBehaviour
 {
-    /*Vector3 offset0;
-    Vector3 offset1;
-    Vector3 offset2;
-    Vector3 offset3;
-    Vector3 offset4;
-    Vector3[] offsets;*/
-
     GameObject[] planesObjs;
     Area[] areas;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         planesObjs = GameObject.FindGameObjectsWithTag("areaPlane");
-        //Debug.Log(planesObjs.Length);
         areas = new Area[planesObjs.Length];
 
         for (int i = 0; i < planesObjs.Length; i++) {
             areas[i] = new Area(0, 0, planesObjs[i]);
-           // Debug.Log(areas[i].checkForArtifact());
         }
-
-        /*Vector3 offset0 = new Vector3(0, 100, 0);
-        Vector3 offset1 = new Vector3((transform.localScale.x*0.75f), 100, 0);
-        Vector3 offset2 = new Vector3(-(transform.localScale.x*0.75f), 100, 0);
-        Vector3 offset3 = new Vector3(0, 100, (transform.localScale.z*0.75f));
-        Vector3 offset4 = new Vector3(0, 100, -(transform.localScale.z*0.75f));
-        offsets = new Vector3[] { offset0, offset1, offset2, offset3, offset4 };*/
     }
 
     // Update is called once per frame
     void Update() {
-        int b = 0;
-        foreach (Area a in areas) {
-            Debug.Log(a.checkForArtifact() + ", " + b);
-            b++;
-        }
-        if(b==6) {
-            b = 0;
-        }
+        //foreach (Area a in areas) {
+            //Debug.Log(a.getMin() + ", " + a.getMax());
+            //Debug.Log(a.checkForArtifact());
+        //}
     }
 
     public Vector3 pickArea(int i) {
@@ -70,7 +49,7 @@ public class ShadowRandomMove : MonoBehaviour
         return getArea(i);
     }
 
-    void updateAreaRanges() {
+    public void updateAreaRanges() {
         int containsArtifact = 0;
         foreach (Area a in areas) {
             if (a.checkForArtifact()) {
@@ -154,6 +133,10 @@ public class ShadowRandomMove : MonoBehaviour
 
         public GameObject getAreaPlane() {
             return areaPlane;
+        }
+
+        public string getName() {
+            return areaPlane.name;
         }
 
         public bool checkForArtifact() {

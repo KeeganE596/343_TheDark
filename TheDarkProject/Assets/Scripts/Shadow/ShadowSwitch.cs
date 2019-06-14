@@ -26,6 +26,7 @@ public class ShadowSwitch : MonoBehaviour
     Grain grainPP;
 
     public bool innerTrigger;
+    bool playerHasArtifact;
 
     //Animation control vars
     Animator shAnim;
@@ -60,6 +61,10 @@ public class ShadowSwitch : MonoBehaviour
     {
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
         innerTrigger = shadowInnerTriggerScript.getInnerTrigger();
+
+        if(playerHasArtifact && !nearPlayer && !innerTrigger) {
+            shadowDriftScript.artifactMove();
+        }
         
         if(innerTrigger) {
             shadowAreaSearchScript.switchSearch(false);
@@ -73,12 +78,12 @@ public class ShadowSwitch : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if(hasPlayerInArea) {  //if in same area as player but not close
+        if(hasPlayerInArea && !nearPlayer && !playerHasArtifact) {  //if in same area as player but not close
             shadowAreaSearchScript.switchSearch(true);
             timer = 0;
         }
 
-        if(!hasPlayerInArea && timer > 2) {  //if not in same area as player
+        if(!hasPlayerInArea && timer > 1.8 && !playerHasArtifact) {  //if not in same area as player
             shadowAreaSearchScript.switchSearch(false);
             areaIndex = Random.Range(0, 100);
             transform.position = shadowRandomMoveScript.pickArea(areaIndex);
@@ -86,6 +91,7 @@ public class ShadowSwitch : MonoBehaviour
             timer = 0;
         }
         //Debug.Log(areaIndex);
+
         //Running the Shadows animations
         ShadowAnimate();
         
@@ -137,25 +143,20 @@ public class ShadowSwitch : MonoBehaviour
         ppVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignettePP, grainPP);
     }
 
-    void ShadowAnimate()
-    {
+    void ShadowAnimate() {
         //Calling on player animator
-        if (nearPlayer)
-        {
+        if (nearPlayer) {
             shAnim.SetBool("Spot", true);
         }
-        if (!nearPlayer)
-        {
+        if (!nearPlayer) {
             shAnim.SetBool("Spot", false);
         }
 
         //Testing, can be deleted
-        if (Input.GetKeyDown(KeyCode.L))
-        {
+        if (Input.GetKeyDown(KeyCode.L)) {
             shAnim.SetBool("Spot", true);
         }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
+        if (Input.GetKeyDown(KeyCode.K)) {
             shAnim.SetBool("Spot", false);
         }
 
@@ -168,5 +169,9 @@ public class ShadowSwitch : MonoBehaviour
 
     public int getArea() {
         return areaIndex;
+    }
+
+    public void changeHoldingArtifact() {
+        playerHasArtifact =! playerHasArtifact;
     }
 }

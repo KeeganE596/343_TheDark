@@ -8,11 +8,18 @@ public class checkInArea : MonoBehaviour
 	bool hasPlayer;
     bool hasArtifact;
 
+    Collider artifactCol;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         hasPlayer = false;
         hasArtifact = false;
+    }
+
+    void Update() {
+        if(!artifactCol) {
+            hasArtifact = false;
+        }
     }
 
     void OnTriggerEnter(Collider other) {
@@ -21,15 +28,7 @@ public class checkInArea : MonoBehaviour
     	}
         if(other.gameObject.tag == "ActiveArtifact") {
             hasArtifact = true;
-        }
-    }
-
-    void OnTriggerStay(Collider other) {
-        if(other.gameObject.tag == "Player") {
-            hasPlayer = true;
-        }
-        if(other.gameObject.tag == "ActiveArtifact") {
-            hasArtifact = true;
+            artifactCol = other;
         }
     }
 

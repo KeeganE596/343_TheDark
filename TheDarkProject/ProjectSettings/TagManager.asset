@@ -15,6 +15,9 @@ TagManager:
   - editingLight
   - Podium
   - Terrain
+  - testTag
+  - Shadow
+  - PodiumBase
   layers:
   - Default
   - TransparentFX

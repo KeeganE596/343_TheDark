@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shadowInnerTrigger : MonoBehaviour
+public class ShadowInnerTrigger : MonoBehaviour
 {
-	ShadowSwitch shadowSwitchScript;
-	public GameObject shadowMain;
+    bool innerTrigger;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        shadowSwitchScript = shadowMain.GetComponent<ShadowSwitch>();
+    void Start() {
+        innerTrigger = false;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {    
     }
 
     void OnTriggerEnter(Collider other) {
     	if(other.gameObject.tag == "Player") {
-    		shadowSwitchScript.innerTrigger = true;
+            innerTrigger = true;
     	}
     }
 
     void OnTriggerExit(Collider other) {
     	if(other.gameObject.tag == "Player") {
-    		shadowSwitchScript.innerTrigger = false;;
+            innerTrigger = false;
     	}
+    }
+
+    public bool getInnerTrigger() {
+        return innerTrigger;
     }
 }

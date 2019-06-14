@@ -24,14 +24,22 @@ public class lanternRaycast : MonoBehaviour
         //Debug.DrawRay(ray.origin, ray.direction * 400, Color.green);
 
         if(Physics.Raycast(ray, out hit, 400, layerMask)) {
-        	if(hit.collider.tag == "Podium") {
-        		playerLight.intensity = 2.5f;
-        		playerLight.range = 8.5f;
+        	if(hit.collider.tag == "PodiumBase") {
+                if(playerLight.intensity < 2.8f) {
+                    playerLight.intensity += 0.1f;
+                }
+                if(playerLight.range < 8.5f) {
+                    playerLight.range += 0.1f;
+                }
         	}
 	    }
 	    else {
-	    	playerLight.intensity = 1.8f;
-	    	playerLight.range = 8f;
+            if(playerLight.intensity > 1.8f) {
+                playerLight.intensity -= 0.1f;
+            }
+            if(playerLight.range > 8f) {
+                playerLight.range -= 0.1f;
+            }
 	    }
     }
 }

@@ -8,6 +8,8 @@ public class ShadowSwitch : MonoBehaviour
     bool nearPlayer;
 	ShadowDrift shadowDriftScript;
     ShadowRandomMove shadowRandomMoveScript;
+    ShadowInnerTrigger shadowInnerTriggerScript;
+    ShadowAreaSearch shadowAreaSearchScript;
     int areaIndex;
     bool hasPlayerInArea;
 
@@ -24,6 +26,7 @@ public class ShadowSwitch : MonoBehaviour
     Grain grainPP;
 
     public bool innerTrigger;
+    bool playerHasArtifact;
 
     //Animation control vars
     Animator shAnim;
@@ -36,6 +39,8 @@ public class ShadowSwitch : MonoBehaviour
         areaIndex = 0;
         shadowDriftScript = GetComponent<ShadowDrift>();
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
+        shadowInnerTriggerScript = GetComponentInChildren<ShadowInnerTrigger>();
+        shadowAreaSearchScript = GetComponent<ShadowAreaSearch>();
         hasPlayerInArea = false;
 
         //Getting animation components
@@ -54,32 +59,38 @@ public class ShadowSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(nearPlayer + ", " + innerTrigger);
-        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
+        innerTrigger = shadowInnerTriggerScript.getInnerTrigger();
 
-        if(nearPlayer && hasPlayerInArea) { //if in area and close to player
-        	shadowDriftScript.Move();
-        	
+        if(playerHasArtifact && !nearPlayer && !innerTrigger) {
+            shadowDriftScript.artifactMove();
         }
-        else if(nearPlayer && hasPlayerInArea && innerTrigger) { //if in area and right near player
-        	shadowDriftScript.stopMove();
+        
+        if(innerTrigger) {
+            shadowAreaSearchScript.switchSearch(false);
+            shadowDriftScript.stopMove();
+        }
+        else if(nearPlayer) { //if in area and close to player
+        	shadowAreaSearchScript.switchSearch(false);
+            shadowDriftScript.Move();
         }
         else {
             timer += Time.deltaTime;
         }
 
-        if(hasPlayerInArea && timer > 1) {  //if in same area as player but not close
-            transform.position = shadowRandomMoveScript.pickArea(areaIndex);
+        if(hasPlayerInArea && !nearPlayer && !playerHasArtifact) {  //if in same area as player but not close
+            shadowAreaSearchScript.switchSearch(true);
             timer = 0;
         }
 
-        if(!nearPlayer && timer > 2) {  //if not in same area as player
+        if(!hasPlayerInArea && timer > 1.8 && !playerHasArtifact) {  //if not in same area as player
+            shadowAreaSearchScript.switchSearch(false);
             areaIndex = Random.Range(0, 100);
             transform.position = shadowRandomMoveScript.pickArea(areaIndex);
 
             timer = 0;
         }
+        //Debug.Log(areaIndex);
 
         //Running the Shadows animations
         ShadowAnimate();
@@ -132,25 +143,20 @@ public class ShadowSwitch : MonoBehaviour
         ppVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignettePP, grainPP);
     }
 
-    void ShadowAnimate()
-    {
+    void ShadowAnimate() {
         //Calling on player animator
-        if (nearPlayer)
-        {
+        if (nearPlayer) {
             shAnim.SetBool("Spot", true);
         }
-        if (!nearPlayer)
-        {
+        if (!nearPlayer) {
             shAnim.SetBool("Spot", false);
         }
 
         //Testing, can be deleted
-        if (Input.GetKeyDown(KeyCode.L))
-        {
+        if (Input.GetKeyDown(KeyCode.L)) {
             shAnim.SetBool("Spot", true);
         }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
+        if (Input.GetKeyDown(KeyCode.K)) {
             shAnim.SetBool("Spot", false);
         }
 
@@ -160,4 +166,12 @@ public class ShadowSwitch : MonoBehaviour
     float map(float s, float a1, float a2, float b1, float b2) {
     	return b1 + (s-a1)*(b2-b1)/(a2-a1);
 	}
+
+    public int getArea() {
+        return areaIndex;
+    }
+
+    public void changeHoldingArtifact() {
+        playerHasArtifact =! playerHasArtifact;
+    }
 }

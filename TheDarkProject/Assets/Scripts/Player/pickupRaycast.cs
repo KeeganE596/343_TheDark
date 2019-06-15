@@ -16,13 +16,20 @@ public class pickupRaycast : MonoBehaviour
 
     public GameObject pedestalPointLight;
     int numCollectedArtifacts;
-    bool gameWon;
+    
 
     string currentHolding;
 
     GameObject shadow;
     ShadowRandomMove shadowRandomMoveScript;
     ShadowSwitch shadowSwitchScript;
+
+    //Gamewon variables
+    bool gameWon;
+    GameObject[] SceneItemsToHide;
+    GameObject Ground;
+    float timer = 0.0f;
+    
 
     // Start is called before the first frame update
     void Start() {
@@ -33,6 +40,9 @@ public class pickupRaycast : MonoBehaviour
         inHandArtifacts = GameObject.FindGameObjectsWithTag("inHandArtifact");
         pickUpArtifactScript = GetComponent<playerArtifactState>();
         mainPedestalScript = GetComponent<mainPedestal>();
+
+        SceneItemsToHide = GameObject.FindGameObjectsWithTag("ToHide");
+        Ground = GameObject.FindGameObjectWithTag("Terrain");
 
         pedestalPointLight.SetActive(false);
         currentHolding = null;
@@ -53,6 +63,7 @@ public class pickupRaycast : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        
         ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
 
         if(Physics.Raycast(ray, out hit, 3))
@@ -94,8 +105,39 @@ public class pickupRaycast : MonoBehaviour
         if(numCollectedArtifacts == 5) {
             gameWon = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            gameWon = true;
+        }
+
         if(gameWon) {
+            GameWonWaitTime();
             Debug.Log("Yay");
         }
+    }
+
+    public void GameWonWaitTime()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            SceneItemsToHide[i].SetActive(false);
+        }
+
+        Ground.SetActive(false);
+
+        timer += Time.deltaTime;
+
+        if (timer > 10.0f)
+        {
+            OpenFinalScene(2);
+            Debug.Log("TimeComplete");
+        }
+
+    }
+
+    public void OpenFinalScene(int scene)
+    {
+        Application.LoadLevel(scene);
     }
 }

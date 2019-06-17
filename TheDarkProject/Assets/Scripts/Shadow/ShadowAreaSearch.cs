@@ -10,6 +10,8 @@ public class ShadowAreaSearch : MonoBehaviour
 	ShadowRandomMove shadowRandomMoveScript;
 	ShadowSwitch shadowSwitchScript;
 
+	GameObject player;
+
     // Start is called before the first frame update
     void Start() {
         doSearch = false;
@@ -17,15 +19,16 @@ public class ShadowAreaSearch : MonoBehaviour
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
         shadowSwitchScript = GetComponent<ShadowSwitch>();
 
+        player = GameObject.FindGameObjectWithTag("Player");
+
         newPosition = new Vector3(0f, 0f, 0f);
     }
 
     // Update is called once per frame
     void Update() {
     	if(doSearch) {
-    		if((newPosition.x == 0f && newPosition.z == 0f) || checkPos()) {
-    			newPosition = shadowRandomMoveScript.getAreaPoint(shadowSwitchScript.getArea());
-    			newPosition.y = 0f;
+    		if((newPosition.x == 0f && newPosition.z == 0f) || checkPos() || checkPlayerPos()) {
+    			newPosition = pickSearchPoint();
     		}
     		transform.LookAt(newPosition);
     		transform.Translate(Vector3.forward * Time.deltaTime*3);
@@ -38,11 +41,29 @@ public class ShadowAreaSearch : MonoBehaviour
     	doSearch = thisBool;
     }
 
-    bool checkPos() {
+    bool checkPos() { //check if shadow is close to newPosition
     	if(transform.position.x > (newPosition.x - 5) && transform.position.x < (newPosition.x + 5) &&
     		transform.position.z > (newPosition.z - 5) && transform.position.z < (newPosition.z + 5)) {
     		return true;
     	}
     	else { return false; }
+    }
+
+    bool checkPlayerPos() { //check if player is far from newPosition
+    	Vector3 playerPos = player.transform.position;
+
+    	if(playerPos.x < (newPosition.x - 25) || playerPos.x > (newPosition.x + 25) ||
+    		playerPos.z < (newPosition.z - 25) || playerPos.z > (newPosition.z + 25)) {
+    		return true;
+    	}
+    	else { return false; }
+    }
+
+    Vector3 pickSearchPoint() { //pick new position close to player
+        Vector3 playerPos = player.transform.position;
+
+        float xR = Random.Range(-15, 15);
+        float zR = Random.Range(-15, 15);
+        return new Vector3(playerPos.x + xR, 0, playerPos.z + zR);
     }
 }

@@ -5,42 +5,34 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class ShadowSwitch : MonoBehaviour
 {
-    bool nearPlayer;
 	ShadowDrift shadowDriftScript;
     ShadowRandomMove shadowRandomMoveScript;
     ShadowInnerTrigger shadowInnerTriggerScript;
     ShadowAreaSearch shadowAreaSearchScript;
+    playerArtifactState playerArtifactStateScript;
+
+    GameObject player;
+    bool nearPlayer;
     int areaIndex;
     bool hasPlayerInArea;
-
-    public GameObject player;
-
     float timer;
-
-    float playerHealth;
-    bool dying;
-
-    PostProcessVolume ppVolume;
-    Vignette vignettePP;
-    Color vignetteCol = new Color(0,0,0,150);
-    Grain grainPP;
-
     public bool innerTrigger;
     bool playerHasArtifact;
 
     //Animation control vars
     Animator shAnim;
-    
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         nearPlayer = false;
         areaIndex = 0;
         shadowDriftScript = GetComponent<ShadowDrift>();
         shadowRandomMoveScript = GetComponent<ShadowRandomMove>();
         shadowInnerTriggerScript = GetComponentInChildren<ShadowInnerTrigger>();
         shadowAreaSearchScript = GetComponent<ShadowAreaSearch>();
+        playerArtifactStateScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<playerArtifactState>();
         hasPlayerInArea = false;
 
         //Getting animation components
@@ -48,12 +40,7 @@ public class ShadowSwitch : MonoBehaviour
 
         timer = 0;
 
-        playerHealth = 50;
-        dying = false;
-
         innerTrigger = false;
-
-        doEffects();
     }
 
     // Update is called once per frame
@@ -62,11 +49,11 @@ public class ShadowSwitch : MonoBehaviour
         hasPlayerInArea = shadowRandomMoveScript.getIfHasPlayer(areaIndex);
         innerTrigger = shadowInnerTriggerScript.getInnerTrigger();
 
-        if(playerHasArtifact && !nearPlayer && !innerTrigger) {
+        if(playerHasArtifact && !nearPlayer && !innerTrigger) { //if player has artifact go to them
             shadowDriftScript.artifactMove();
         }
         
-        if(innerTrigger) {
+        if(innerTrigger) { //if right at player
             shadowAreaSearchScript.switchSearch(false);
             shadowDriftScript.stopMove();
         }
@@ -90,57 +77,30 @@ public class ShadowSwitch : MonoBehaviour
 
             timer = 0;
         }
-        //Debug.Log(areaIndex);
 
         //Running the Shadows animations
         ShadowAnimate();
-        
-        if (dying && playerHealth >= 0) {
-       		playerHealth -= 0.1f;
-       	}
-        else if(!dying && playerHealth <= 50) {
-            playerHealth += 0.1f;        
-        }
-
-        //Post processing for player when close
-        vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
-        grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0f);
-        grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
     }
 
 
     void OnTriggerEnter(Collider other) {
     	if(other.gameObject.tag == "Player") {
     		nearPlayer = true;
-    		transform.LookAt(GameObject.FindWithTag("Player").transform.position);
-            dying = true;
+    		transform.LookAt(other.gameObject.transform.position);
+            playerArtifactStateScript.nearShadow = true;
     	}
     }
     void OnTriggerStay(Collider other) {
     	if(other.gameObject.tag == "Player") {
     		nearPlayer = true;
-    		transform.LookAt(GameObject.FindWithTag("Player").transform.position);
-            dying = true;
+    		transform.LookAt(other.gameObject.transform.position);
     	}
     }
     void OnTriggerExit(Collider other) {
         if(other.gameObject.tag == "Player") {
             nearPlayer = false;
-            dying = false;
+            playerArtifactStateScript.nearShadow = false;
         }
-    }
-
-    void doEffects() {
-        vignettePP = ScriptableObject.CreateInstance<Vignette>();
-        vignettePP.enabled.Override(true);
-        vignettePP.intensity.Override(0.05f);
-        vignettePP.color.Override(vignetteCol);
-        grainPP = ScriptableObject.CreateInstance<Grain>();
-        grainPP.enabled.Override(true);
-        grainPP.intensity.Override(0.1f);
-        grainPP.size.Override(1f);
-
-        ppVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignettePP, grainPP);
     }
 
     void ShadowAnimate() {
@@ -162,10 +122,6 @@ public class ShadowSwitch : MonoBehaviour
 
 //        print(shAnim.GetBool("Spot"));
     }
-
-    float map(float s, float a1, float a2, float b1, float b2) {
-    	return b1 + (s-a1)*(b2-b1)/(a2-a1);
-	}
 
     public int getArea() {
         return areaIndex;

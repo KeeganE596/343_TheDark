@@ -19,10 +19,6 @@ public class ShadowRandomMove : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        //foreach (Area a in areas) {
-            //Debug.Log(a.getMin() + ", " + a.getMax());
-            //Debug.Log(a.checkForArtifact());
-        //}
     }
 
     public Vector3 pickArea(int i) {

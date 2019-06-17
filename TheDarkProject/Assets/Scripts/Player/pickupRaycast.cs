@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pickupRaycast : MonoBehaviour
-{
+public class pickupRaycast : MonoBehaviour {
 	Camera cam;
 	Ray ray;
     RaycastHit hit;
@@ -12,13 +11,9 @@ public class pickupRaycast : MonoBehaviour
     GameObject[] collectedArtifacts;
     GameObject[] inHandArtifacts;
     playerArtifactState pickUpArtifactScript;
-    mainPedestal mainPedestalScript;
-
-    public GameObject pedestalPointLight;
     int numCollectedArtifacts;
-    
-
     string currentHolding;
+    Light podiumLight;
 
     GameObject shadow;
     ShadowRandomMove shadowRandomMoveScript;
@@ -39,12 +34,11 @@ public class pickupRaycast : MonoBehaviour
         collectedArtifacts = GameObject.FindGameObjectsWithTag("CollectedArtifact");
         inHandArtifacts = GameObject.FindGameObjectsWithTag("inHandArtifact");
         pickUpArtifactScript = GetComponent<playerArtifactState>();
-        mainPedestalScript = GetComponent<mainPedestal>();
 
         SceneItemsToHide = GameObject.FindGameObjectsWithTag("ToHide");
         Ground = GameObject.FindGameObjectWithTag("Terrain");
 
-        pedestalPointLight.SetActive(false);
+        podiumLight = GameObject.FindGameObjectWithTag("PodiumLight").GetComponent<Light>();
         currentHolding = null;
 
         foreach(GameObject a in collectedArtifacts) {
@@ -63,16 +57,16 @@ public class pickupRaycast : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        
         ray = cam.ScreenPointToRay(new Vector3(cam.pixelWidth/2, cam.pixelHeight/2, 0));
 
         if(Physics.Raycast(ray, out hit, 3))
 	    {
             if(Input.GetMouseButtonDown(0)) {
+                //if clicking on main podium
                 if(hit.collider.tag == "Pedestal" && pickUpArtifactScript.isHoldingArtifact) {
                     pickUpArtifactScript.changeIsHolding();
-                    pedestalPointLight.SetActive(true);
                     shadowSwitchScript.changeHoldingArtifact();
+                    pickUpArtifactScript.addArtifact();
                     for(int i=0; i<collectedArtifacts.Length; i++) {
                         if(collectedArtifacts[i].name == currentHolding) {
                             collectedArtifacts[i].SetActive(true);
@@ -83,8 +77,10 @@ public class pickupRaycast : MonoBehaviour
                         }
                     }
                     currentHolding = null;
+                    podiumLight.intensity = numCollectedArtifacts*3;
                     shadowRandomMoveScript.updateAreaRanges();
                 }
+                //if clicking on artifact
                 for(int i=0; i<activeArtifacts.Length; i++){
                     if(hit.collider.tag == "ActiveArtifact" && currentHolding == null){
                         pickUpArtifactScript.changeIsHolding();
@@ -97,8 +93,7 @@ public class pickupRaycast : MonoBehaviour
                             }
                         }
                     }   
-                }
-                           
+                }    
             }
         }
 
@@ -106,8 +101,7 @@ public class pickupRaycast : MonoBehaviour
             gameWon = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
+        if (Input.GetKeyDown(KeyCode.F6)) {
             gameWon = true;
         }
 
@@ -117,10 +111,8 @@ public class pickupRaycast : MonoBehaviour
         }
     }
 
-    public void GameWonWaitTime()
-    {
-        for (int i = 0; i < 8; i++)
-        {
+    public void GameWonWaitTime() {
+        for (int i = 0; i < 8; i++) {
             SceneItemsToHide[i].SetActive(false);
         }
 
@@ -128,16 +120,14 @@ public class pickupRaycast : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer > 10.0f)
-        {
+        if (timer > 10.0f) {
             OpenFinalScene(2);
             Debug.Log("TimeComplete");
         }
 
     }
 
-    public void OpenFinalScene(int scene)
-    {
+    public void OpenFinalScene(int scene) {
         Application.LoadLevel(scene);
     }
 }

@@ -18,6 +18,8 @@ TagManager:
   - testTag
   - Shadow
   - PodiumBase
+  - PodiumLight
+  - ToHide
   layers:
   - Default
   - TransparentFX

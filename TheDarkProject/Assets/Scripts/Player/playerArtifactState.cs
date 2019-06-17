@@ -7,17 +7,24 @@ public class playerArtifactState : MonoBehaviour
 {
 
 	public bool isHoldingArtifact;
+    public bool nearPodium;
+    public bool nearShadow;
 
 	GameObject[] dreamObjects;
 
-	PostProcessVolume testVolume;
-	Vignette testVignette;
-	ChromaticAberration testCA;
-	ColorGrading testCG;
-	LensDistortion testLD;
+	PostProcessVolume postProcessingVolume;
+	Vignette vignettePP;
+	ChromaticAberration chromaticAberrationPP;
+	ColorGrading colorGradingPP;
+	LensDistortion lensDistPP;
+    MotionBlur motionBlurPP;
+    Grain grainPP;
 
-    public GameObject greyScaleCG;
-    //public GameObject pedLight1;
+    float playerHealth;
+    float deathRate;
+
+    int collectedArtifacts;
+    float ldVar;
 
     //Animation control vars
     Animator plAnim;
@@ -26,18 +33,23 @@ public class playerArtifactState : MonoBehaviour
     void Start()
     {
         isHoldingArtifact = false;
+        nearPodium = false;
         dreamObjects = GameObject.FindGameObjectsWithTag("DreamObject");
 
         //Getting animation components
         plAnim = GetComponentInChildren<Animator>();
+
+        collectedArtifacts = 1;
+
+        playerHealth = 50;
+        deathRate = 0.1f;
+
+        doPPEffects();
     }
 
     // Update is called once per frame
     void Update()
     {
-    	//var sinTest = (Mathf.Sin(Time.realtimeSinceStartup));
-    	//Debug.Log(sinTest);
-
     	if(isHoldingArtifact) {
     		for(int i=0; i<dreamObjects.Length; i++) {
     			dreamObjects[i].SetActive(true);
@@ -46,58 +58,114 @@ public class playerArtifactState : MonoBehaviour
     		var sinWave = (Mathf.Sin(Time.realtimeSinceStartup*2f));
     		var cosWave = (Mathf.Cos(Time.realtimeSinceStartup*2f));
 
-    		//testVignette.intensity.value = Mathf.Lerp(0.3f, 0.45f, sinWave);
-    		testCA.intensity.value = Mathf.Lerp(0.3f, 1.0f, sinWave);
-    		testCG.hueShift.value = Mathf.Lerp(-50f, 50f, sinWave);
-    		testLD.intensity.value = Mathf.Lerp(-30f, 30f, sinWave);
-    		testLD.centerX.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Sin(Time.realtimeSinceStartup*2.2f)));
-    		testLD.centerY.value = Mathf.Lerp(-0.3f, 0.3f, (Mathf.Cos(Time.realtimeSinceStartup*3f)));
-    		//Debug.Log(testLD.centerY.value);
+    		vignettePP.intensity.value = Mathf.Lerp((0.1f*collectedArtifacts), (0.1f*collectedArtifacts), sinWave);
+    		chromaticAberrationPP.intensity.value = Mathf.Lerp((0.05f*collectedArtifacts), (0.1f*collectedArtifacts), sinWave);
+    		colorGradingPP.hueShift.value = Mathf.Lerp(-(10*collectedArtifacts), (10*collectedArtifacts), sinWave);
+            colorGradingPP.saturation.value = -(50/collectedArtifacts);
+    		lensDistPP.intensity.value = Mathf.Lerp(-(6*collectedArtifacts), (6*collectedArtifacts), sinWave);
+    		lensDistPP.centerX.value = Mathf.Lerp(-(0.1f*collectedArtifacts), (0.1f*collectedArtifacts), (Mathf.Sin(Time.realtimeSinceStartup*2.2f)));
+    		lensDistPP.centerY.value = Mathf.Lerp(-(0.1f*collectedArtifacts), (0.1f*collectedArtifacts), (Mathf.Cos(Time.realtimeSinceStartup*3f)));
     	}
     	else if(dreamObjects[0].activeSelf) {
     		for(int i=0; i<dreamObjects.Length; i++) {
     			dreamObjects[i].SetActive(false);
     		}
     	}
+
+        if(nearPodium) {
+            if(chromaticAberrationPP.intensity.value < 0.08*collectedArtifacts) {
+                chromaticAberrationPP.intensity.value +=0.05f*collectedArtifacts;
+            }
+            if(colorGradingPP.saturation.value < 55/collectedArtifacts) {
+                colorGradingPP.saturation.value += 1;
+            }
+            var sinWave = (Mathf.Sin(Time.realtimeSinceStartup));
+            colorGradingPP.hueShift.value = Mathf.Lerp(-(10*collectedArtifacts), (10*collectedArtifacts), sinWave);
+        }
+        else {
+            if(chromaticAberrationPP.intensity.value > 0) {
+                chromaticAberrationPP.intensity.value -= 0.05f;
+            }
+            if(colorGradingPP.saturation.value > -60) {
+                colorGradingPP.saturation.value -= 1;
+            }
+            colorGradingPP.hueShift.value = 0;
+        }
+
+        if(nearShadow) {
+            if (playerHealth >= 0) {
+                playerHealth -= deathRate;
+                if(deathRate < 0.6f) {
+                    deathRate += 0.01f;
+                } 
+            }
+        }
+        else if(playerHealth <= 50) {
+            playerHealth += 0.1f; 
+            if(deathRate > 0.1f) {
+                deathRate -= 0.03f;
+            }      
+        }
+
+        if(playerHealth <= 0f) {
+        	Debug.Log("Oh No");
+        }
+
+        vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
+        grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0.18f);
+        grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
+        colorGradingPP.contrast.value = map(playerHealth, 0f, 50f, -80f, 0f);
+
+        //Debug.Log(nearPodium);
     }
 
     public void changeIsHolding() {
     	isHoldingArtifact = !isHoldingArtifact;
     	
     	if(isHoldingArtifact) {
-    		doEffects();
-            greyScaleCG.SetActive(false);
-            //pedLight1.SetActive(false);
-
-            //Calling on player animator
             plAnim.SetBool("Carry", true);
         }
     	else {
-    		RuntimeUtilities.DestroyVolume(testVolume, true, true);
-            greyScaleCG.SetActive(true);
             plAnim.SetBool("Carry", false);
         }
     }
 
     //enable the post processing volume
-    void doEffects() {
-        //Debug.Log("doing effects");
-    	testVignette = ScriptableObject.CreateInstance<Vignette>();
-    	testVignette.enabled.Override(true);
-        testVignette.intensity.Override(0.35f);
-		testCA = ScriptableObject.CreateInstance<ChromaticAberration>();
-		testCA.enabled.Override(true);
-        testCA.intensity.Override(1f);
-		testCG = ScriptableObject.CreateInstance<ColorGrading>();
-		testCG.enabled.Override(true);
-        testCG.hueShift.Override(1f);
-        testCG.saturation.Override(-10f);
-		testLD = ScriptableObject.CreateInstance<LensDistortion>();
-		testLD.enabled.Override(true);
-        testLD.intensity.Override(1f);
-        testLD.centerX.Override(0f);
-        testLD.centerY.Override(0f);
+    void doPPEffects() {
+        //General Effects
+        colorGradingPP = ScriptableObject.CreateInstance<ColorGrading>();
+        colorGradingPP.enabled.Override(true);
+        colorGradingPP.saturation.Override(-65f);
+        colorGradingPP.contrast.Override(0f);
+        motionBlurPP = ScriptableObject.CreateInstance<MotionBlur>();
+        motionBlurPP.enabled.Override(true);
+        motionBlurPP.shutterAngle.Override(270);
+        grainPP = ScriptableObject.CreateInstance<Grain>();
+        grainPP.enabled.Override(true);
+        grainPP.intensity.Override(0.18f);
 
-		testVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, testVignette, testCA, testCG, testLD);
+        //Artifact Effects
+    	vignettePP = ScriptableObject.CreateInstance<Vignette>();
+    	vignettePP.enabled.Override(true);
+        vignettePP.intensity.Override(0);
+		chromaticAberrationPP = ScriptableObject.CreateInstance<ChromaticAberration>();
+		chromaticAberrationPP.enabled.Override(true);
+        chromaticAberrationPP.intensity.Override(0);
+        colorGradingPP.hueShift.Override(0);
+		lensDistPP = ScriptableObject.CreateInstance<LensDistortion>();
+		lensDistPP.enabled.Override(true);
+        lensDistPP.intensity.Override(0);
+        lensDistPP.centerX.Override(0f);
+        lensDistPP.centerY.Override(0f);
+
+		postProcessingVolume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignettePP, chromaticAberrationPP, colorGradingPP, lensDistPP, motionBlurPP, grainPP);
+    }
+
+    public void addArtifact() {
+        collectedArtifacts++;
+    }
+
+    float map(float s, float a1, float a2, float b1, float b2) {
+        return b1 + (s-a1)*(b2-b1)/(a2-a1);
     }
 }

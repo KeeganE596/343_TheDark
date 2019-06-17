@@ -26,6 +26,8 @@ public class playerArtifactState : MonoBehaviour
     int collectedArtifacts;
     float ldVar;
 
+    GameObject canvas;
+
     //Animation control vars
     Animator plAnim;
 
@@ -43,6 +45,9 @@ public class playerArtifactState : MonoBehaviour
 
         playerHealth = 50;
         deathRate = 0.1f;
+
+        canvas = GameObject.FindGameObjectWithTag("Death");
+        canvas.SetActive(false);
 
         doPPEffects();
     }
@@ -95,8 +100,8 @@ public class playerArtifactState : MonoBehaviour
         if(nearShadow) {
             if (playerHealth >= 0) {
                 playerHealth -= deathRate;
-                if(deathRate < 0.6f) {
-                    deathRate += 0.01f;
+                if(deathRate < 0.3f) {
+                    deathRate += 0.008f;
                 } 
             }
         }
@@ -108,13 +113,13 @@ public class playerArtifactState : MonoBehaviour
         }
 
         if(playerHealth <= 0f) {
-        	Debug.Log("Oh No");
+        	canvas.SetActive(true);
         }
 
         vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
         grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0.18f);
         grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
-        colorGradingPP.contrast.value = map(playerHealth, 0f, 50f, -80f, 0f);
+        colorGradingPP.contrast.value = map(playerHealth, 0f, 50f, 100f, 0f);
 
         //Debug.Log(nearPodium);
     }

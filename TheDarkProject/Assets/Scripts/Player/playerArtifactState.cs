@@ -43,10 +43,11 @@ public class playerArtifactState : MonoBehaviour
 
         collectedArtifacts = 1;
 
-        playerHealth = 50;
+        playerHealth = 70;
         deathRate = 0.1f;
 
         canvas = GameObject.FindGameObjectWithTag("Death");
+
         canvas.SetActive(false);
 
         doPPEffects();
@@ -81,7 +82,7 @@ public class playerArtifactState : MonoBehaviour
             if(chromaticAberrationPP.intensity.value < 0.08*collectedArtifacts) {
                 chromaticAberrationPP.intensity.value +=0.05f*collectedArtifacts;
             }
-            if(colorGradingPP.saturation.value < 55/collectedArtifacts) {
+            if(colorGradingPP.saturation.value < -(70/collectedArtifacts)) {
                 colorGradingPP.saturation.value += 1;
             }
             var sinWave = (Mathf.Sin(Time.realtimeSinceStartup));
@@ -91,17 +92,21 @@ public class playerArtifactState : MonoBehaviour
             if(chromaticAberrationPP.intensity.value > 0) {
                 chromaticAberrationPP.intensity.value -= 0.05f;
             }
-            if(colorGradingPP.saturation.value > -60) {
+            if(colorGradingPP.saturation.value > -80) {
                 colorGradingPP.saturation.value -= 1;
             }
             colorGradingPP.hueShift.value = 0;
+
+            lensDistPP.intensity.value = 0;
+            lensDistPP.centerX.value = 0;
+            lensDistPP.centerY.value = 0;
         }
 
         if(nearShadow) {
-            if (playerHealth >= 0) {
+            if (playerHealth > 0) {
                 playerHealth -= deathRate;
                 if(deathRate < 0.3f) {
-                    deathRate += 0.008f;
+                    deathRate += 0.002f;
                 } 
             }
         }
@@ -114,14 +119,14 @@ public class playerArtifactState : MonoBehaviour
 
         if(playerHealth <= 0f) {
         	canvas.SetActive(true);
+            grainPP.intensity.value = 2;
         }
 
-        vignettePP.intensity.value = map(playerHealth, 0f, 50f, 0.5f, 0f);
-        grainPP.intensity.value = map(playerHealth, 0f, 50f, 1f, 0.18f);
-        grainPP.size.value = map(playerHealth, 0f, 50f, 3f, 1f);
-        colorGradingPP.contrast.value = map(playerHealth, 0f, 50f, 100f, 0f);
-
-        //Debug.Log(nearPodium);
+        vignettePP.intensity.value = map(playerHealth, 0f, 70f, 0.6f, 0f);
+        grainPP.intensity.value = map(playerHealth, 0f, 70f, 1f, 0.18f);
+        grainPP.size.value = map(playerHealth, 0f, 70f, 3f, 1f);
+        colorGradingPP.contrast.value = map(playerHealth, 0f, 70f, 90f, 0f);
+        colorGradingPP.temperature.value = map(playerHealth, 0f, 70f, 80f, 0f);
     }
 
     public void changeIsHolding() {
@@ -140,11 +145,11 @@ public class playerArtifactState : MonoBehaviour
         //General Effects
         colorGradingPP = ScriptableObject.CreateInstance<ColorGrading>();
         colorGradingPP.enabled.Override(true);
-        colorGradingPP.saturation.Override(-65f);
-        colorGradingPP.contrast.Override(0f);
+        colorGradingPP.saturation.Override(-80f);
+        
         motionBlurPP = ScriptableObject.CreateInstance<MotionBlur>();
         motionBlurPP.enabled.Override(true);
-        motionBlurPP.shutterAngle.Override(270);
+        motionBlurPP.shutterAngle.Override(200);
         grainPP = ScriptableObject.CreateInstance<Grain>();
         grainPP.enabled.Override(true);
         grainPP.intensity.Override(0.18f);
@@ -157,6 +162,8 @@ public class playerArtifactState : MonoBehaviour
 		chromaticAberrationPP.enabled.Override(true);
         chromaticAberrationPP.intensity.Override(0);
         colorGradingPP.hueShift.Override(0);
+        colorGradingPP.contrast.Override(0);
+        colorGradingPP.temperature.Override(0);
 		lensDistPP = ScriptableObject.CreateInstance<LensDistortion>();
 		lensDistPP.enabled.Override(true);
         lensDistPP.intensity.Override(0);

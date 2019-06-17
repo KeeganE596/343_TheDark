@@ -4,32 +4,39 @@ using UnityEngine;
 
 public class ShadowDrift : MonoBehaviour
 {
+    int collectedArtifacts;
+    float speedMult;
+
     // Start is called before the first frame update
     void Start() {
+        collectedArtifacts = 0;
+        speedMult = 0;
     }
 
     // Update is called once per frame
     void Update() {
+        speedMult = 0.3f*collectedArtifacts;
     }
 
     public void Move() {
     	transform.LookAt(GameObject.FindWithTag("Player").transform.position);
-    	transform.Translate(Vector3.forward * Time.deltaTime*4);
+    	transform.Translate(Vector3.forward * Time.deltaTime*(3+speedMult));
         transform.position += Vector3.up * 0.01f;
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
-        //Debug.Log("normal drift");
     }
 
     public void stopMove()  {
         transform.LookAt(GameObject.FindWithTag("Player").transform.position);
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
-        //Debug.Log("stop drift");
     }
 
     public void artifactMove() {
         transform.LookAt(GameObject.FindWithTag("Player").transform.position);
-        transform.Translate(Vector3.forward * Time.deltaTime*5f);
+        transform.Translate(Vector3.forward * Time.deltaTime*(4+speedMult));
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
-        //Debug.Log("finding");
+    }
+
+    public void addArtifact() {
+        collectedArtifacts++;
     }
 }

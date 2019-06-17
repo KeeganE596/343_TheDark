@@ -18,6 +18,7 @@ public class pickupRaycast : MonoBehaviour {
     GameObject shadow;
     ShadowRandomMove shadowRandomMoveScript;
     ShadowSwitch shadowSwitchScript;
+    ShadowDrift shadowDriftScript;
 
     //Gamewon variables
     bool gameWon;
@@ -53,6 +54,7 @@ public class pickupRaycast : MonoBehaviour {
         shadow = GameObject.FindWithTag("Shadow");
         shadowRandomMoveScript = shadow.GetComponent<ShadowRandomMove>();
         shadowSwitchScript = shadow.GetComponent<ShadowSwitch>();
+        shadowDriftScript = shadow.GetComponent<ShadowDrift>();
     }
 
     // Update is called once per frame
@@ -67,6 +69,7 @@ public class pickupRaycast : MonoBehaviour {
                     pickUpArtifactScript.changeIsHolding();
                     shadowSwitchScript.changeHoldingArtifact();
                     pickUpArtifactScript.addArtifact();
+                    shadowDriftScript.addArtifact();
                     for(int i=0; i<collectedArtifacts.Length; i++) {
                         if(collectedArtifacts[i].name == currentHolding) {
                             collectedArtifacts[i].SetActive(true);

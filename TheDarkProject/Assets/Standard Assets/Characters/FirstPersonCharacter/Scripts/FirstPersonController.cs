@@ -44,6 +44,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private double playerStamina;
         
+	//Animation control vars
+        private Animator plAnim;
+        bool moving;
 
         // Use this for initialization
         private void Start()
@@ -60,6 +63,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
 			playerStamina = 10;
+			//Getting animation components
+            plAnim = GetComponentInChildren<Animator>();
         }
 
 
@@ -86,6 +91,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+	    PlayAnimations();
         }
 
 
@@ -253,6 +259,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 StopAllCoroutines();
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
+	    
+	    if (vertical > 0 || horizontal > 0)
+            {
+                moving = true;
+            }
+            else if (vertical == 0 && horizontal == 0)
+            {
+                moving = false;
+            }
         }
 
 
@@ -276,6 +291,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+	
+	void PlayAnimations()
+        {
+            if (moving)
+            {
+                plAnim.SetBool("Walk", true);
+            }
+            else if (!moving)
+            {
+                plAnim.SetBool("Walk", false);
+            }
+            
         }
 
         

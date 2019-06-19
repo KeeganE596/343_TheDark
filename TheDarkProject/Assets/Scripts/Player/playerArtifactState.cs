@@ -56,6 +56,10 @@ public class playerArtifactState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+
     	if(isHoldingArtifact) {
     		for(int i=0; i<dreamObjects.Length; i++) {
     			dreamObjects[i].SetActive(true);
@@ -118,8 +122,7 @@ public class playerArtifactState : MonoBehaviour
         }
 
         if(playerHealth <= 0f) {
-        	canvas.SetActive(true);
-            grainPP.intensity.value = 2;
+        	GameWonWaitTime();
         }
 
         vignettePP.intensity.value = map(playerHealth, 0f, 70f, 0.6f, 0f);
@@ -180,4 +183,21 @@ public class playerArtifactState : MonoBehaviour
     float map(float s, float a1, float a2, float b1, float b2) {
         return b1 + (s-a1)*(b2-b1)/(a2-a1);
     }
+
+    public void GameWonWaitTime() {
+        canvas.SetActive(true);
+        grainPP.intensity.value = 2;
+
+        float timer = 0;
+        timer += Time.deltaTime;
+
+        if (timer > 0.03f) {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Application.LoadLevel(0);
+        }
+        Debug.Log(timer);
+    }
+        
+
 }

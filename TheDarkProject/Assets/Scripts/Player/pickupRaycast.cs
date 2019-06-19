@@ -109,28 +109,21 @@ public class pickupRaycast : MonoBehaviour {
         }
 
         if(gameWon) {
+            timer += Time.deltaTime;
             GameWonWaitTime();
-            Debug.Log("Yay");
         }
+
     }
 
     public void GameWonWaitTime() {
-        for (int i = 0; i < 8; i++) {
-            SceneItemsToHide[i].SetActive(false);
-        }
-
-        Ground.SetActive(false);
-
-        timer += Time.deltaTime;
-
-        if (timer > 10.0f) {
-            OpenFinalScene(2);
+        if (timer > 1f)
+        {
+            OpenFinalScene();
             Debug.Log("TimeComplete");
         }
-
     }
 
-    public void OpenFinalScene(int scene) {
-        Application.LoadLevel(scene);
+    public void OpenFinalScene() {
+        Application.LoadLevel(2);
     }
 }
